@@ -12,7 +12,7 @@ class player {
     this.id = id;
   }
 }
-
+let i = 0;
 let player1;
 let player2;
 let counter1 = 0;
@@ -65,7 +65,7 @@ const pokeball_formation = async (num) => {
         audio.play();
         counter1++;
         img.src = data.sprites.other.showdown.front_shiny;
-        img.style.marginBottom = "30px";
+        img.style.marginBottom = "1.875rem";
         pokeball_div.style.backgroundImage =
           "url('/pokeballfile/open_pokeball.png')";
         img.style.visibility = "visible";
@@ -89,29 +89,29 @@ const pokeball_formation = async (num) => {
         healthtext.style.backgroundColor = "green";
         healthtext.style.width = player1.health+"%";
         healthtext.innerHTML = "Health" + player1.health;
-        // healthtext.style.marginTop = "50px";
-        healthtext.style.fontSize = "30px";
+
+        healthtext.style.fontSize = "1.875rem";
         buttonheavy.style.backgroundColor = "#EF0307";
         buttonheavy.innerHTML = player1.attack1;
         buttonlight.innerHTML = player1.attack2;
-        buttonheavy.style.marginRight = "10px";
+        buttonheavy.style.marginRight = "0.625rem";
         attackdiv.style.width = "200%";
         attackdiv.style.height = "200%";
         buttonheavy.style.width = "100%";
-        buttonheavy.style.height = "40px";
+        buttonheavy.style.height = "2.5rem";
         buttonlight.style.backgroundColor = "	#00FFFF";
         buttonlight.style.width = "100%";
-        buttonlight.style.fontSize = "20px";
-        buttonheavy.style.fontSize = "20px";
-        buttonlight.style.height = "40px";
+        buttonlight.style.fontSize = "1.25rem";
+        buttonheavy.style.fontSize = "1.25rem";
+        buttonlight.style.height = "2.5rem";
         attackdiv.appendChild(buttonheavy);
         attackdiv.appendChild(buttonlight);
         attackdiv.style.display = "flex";
         attackdiv.style.flexDirection = "row";
         attackdiv.style.justifyContent = "space-around";
-        attackdiv.style.marginTop = "10px";
+        attackdiv.style.marginTop = "0.625rem";
         buttonheavy.addEventListener("click", async () => {
-          let i = 0;
+          
           let u;
           let response_u;
           let data_u;
@@ -122,7 +122,7 @@ const pokeball_formation = async (num) => {
             data_u = await response_u.json();
             i++;
           } while (!data_u.power);
-          i--;
+          // i--;
           if (b1 == b2) {
             b1++;
             if (player2.health >= data_u.power * 0.1) {
@@ -133,7 +133,7 @@ const pokeball_formation = async (num) => {
                 " on player 2 which caused a damage of " +
                 data_u.power * 0.1 +
                 "\n";
-              text.style.fontSize = "30px";
+              text.style.fontSize = "1.875rem";
               text.style.color = "blue";
               textarea.appendChild(text);
               textarea.scrollTop = textarea.scrollHeight;
@@ -163,7 +163,6 @@ const pokeball_formation = async (num) => {
           ht2.innerHTML = "Health" + player2.health;
         });
         buttonlight.addEventListener("click", async () => {
-          let i = 0;
           let u;
           let response_u;
           let data_u;
@@ -174,7 +173,7 @@ const pokeball_formation = async (num) => {
             data_u = await response_u.json();
             i++;
           } while (!data_u.power);
-          i--;
+          // i--;
           if (b1 == b2) {
             b1++;
             if (player2.health >= data_u.power * 0.1) {
@@ -185,7 +184,7 @@ const pokeball_formation = async (num) => {
               " on player 2 which caused a damage of " +
               data_u.power * 0.1 +
               "\n";
-              text.style.fontSize = "30px";
+              text.style.fontSize = "1.875rem";
               text.style.color = "blue";
               textarea.appendChild(text);
               textarea.scrollTop = textarea.scrollHeight;
@@ -250,6 +249,7 @@ const pokeball_formation_2 = async (num) => {
   //   name.innerHTML = data.forms[0].name;
   img.src = data.sprites.front_default;
   // pokeball_div.click();
+  let i = 0;
   pokeball_div.addEventListener("click", () => {
     if (counter2 == 0) {
       if (img.style.visibility === "hidden") {
@@ -259,7 +259,7 @@ const pokeball_formation_2 = async (num) => {
         audio.play();
         counter2++;
         img.src = data.sprites.other.showdown.front_shiny;
-        img.style.marginBottom = "30px";
+        img.style.marginBottom = "1.875rem";
         pokeball_div.style.backgroundImage =
           "url('/pokeballfile/open_pokeball.png')";
         img.style.visibility = "visible";
@@ -287,29 +287,27 @@ const pokeball_formation_2 = async (num) => {
         healthtext.style.width = player2.health+"%";
         // healthtext.style.marginTop = "-100%";
         healthtext.innerHTML = "Health" + player2.health;
-        // healthtext.style.marginTop = "50px";
-        healthtext.style.fontSize = "30px";
+        healthtext.style.fontSize = "1.875rem";
         buttonheavy.style.backgroundColor = "#EF0307";
         buttonheavy.innerHTML = player2.attack1;
         buttonlight.innerHTML = player2.attack2;
-        buttonheavy.style.marginRight = "10px";
+        buttonheavy.style.marginRight = "0.625rem";
         attackdiv.style.width = "200%";
         attackdiv.style.height = "200%";
         buttonheavy.style.width = "100%";
-        buttonheavy.style.height = "40px";
+        buttonheavy.style.height = "2.5rem";
         buttonlight.style.backgroundColor = "	#00FFFF";
         buttonlight.style.width = "100%";
-        buttonlight.style.fontSize = "20px";
-        buttonheavy.style.fontSize = "20px";
-        buttonlight.style.height = "40px";
+        buttonlight.style.fontSize = "1.25rem";
+        buttonheavy.style.fontSize = "1.25rem";
+        buttonlight.style.height = "2.5rem";
         attackdiv.appendChild(buttonheavy);
         attackdiv.appendChild(buttonlight);
         attackdiv.style.display = "flex";
         attackdiv.style.flexDirection = "row";
         attackdiv.style.justifyContent = "space-around";
-        attackdiv.style.marginTop = "10px";
+        attackdiv.style.marginTop = "0.625rem";
         buttonheavy.addEventListener("click", async () => {
-          let i = 0;
           let u;
           let response_u;
           let data_u;
@@ -320,7 +318,6 @@ const pokeball_formation_2 = async (num) => {
             data_u = await response_u.json();
             i++;
           } while (!data_u.power);
-          i--;
           if (b2 < b1) {
             b2++;
             if (player1.health >= data_u.power * 0.1) {
@@ -331,7 +328,7 @@ const pokeball_formation_2 = async (num) => {
                 " on player 2 which caused a damage of " +
                 data_u.power * 0.1 +
                 "\n";
-              text.style.fontSize = "30px";
+              text.style.fontSize = "1.875rem";
               text.style.color = "red";
               textarea.appendChild(text);
               textarea.scrollTop = textarea.scrollHeight;
@@ -363,7 +360,6 @@ const pokeball_formation_2 = async (num) => {
           // text1 = "Health" + player1.health;
         });
         buttonlight.addEventListener("click", async () => {
-          let i = 0;
           let u;
           let response_u;
           let data_u;
@@ -374,7 +370,6 @@ const pokeball_formation_2 = async (num) => {
             data_u = await response_u.json();
             i++;
           } while (!data_u.power);
-          i--;
           if (b2 < b1) {
             b2++;
             if (player1.health >= data_u.power * 0.1) {
@@ -386,7 +381,7 @@ const pokeball_formation_2 = async (num) => {
               " on player 2 which caused a damage of " +
               data_u.power * 0.1 +
                 "\n";
-              text.style.fontSize = "30px";
+              text.style.fontSize = "1.875rem";
               textarea.appendChild(text);
               textarea.scrollTop = textarea.scrollHeight;
               

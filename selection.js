@@ -5,14 +5,14 @@ let choosen_pokemons_id = [];
 let choosen_pokemons_id_2 = [];
 let counter = 0;
 let counter_2 = 0;
-let c1 = 0;
-let c2 = 0;
+let counter1 = 0;
+let counter2 = 0;
 
 // let body = document.getElementById("body");
 let url = "https://pokeapi.co/api/v2/pokemon/";
-const make_small_div = async (num) => {
-  let smaller_div = document.createElement("div");
-  smaller_div.id = num;
+const pokeball_formation_function = async (num) => {
+  let pokeball_div = document.createElement("div");
+  pokeball_div.id = num;
   let name = document.createElement("p");
   name.style.fontWeight = "bolder";
   name.style.fontSize = "1.35rem";
@@ -21,23 +21,22 @@ const make_small_div = async (num) => {
   img.style.scale = "1.2";
   img.style.height = "100px";
   img.style.width = "100px";
-  smaller_div.appendChild(img);
-  smaller_div.appendChild(name);
-  main_div_1.appendChild(smaller_div);
+  pokeball_div.appendChild(img);
+  pokeball_div.appendChild(name);
+  main_div_1.appendChild(pokeball_div);
   console.log(url + num + "/");
   let response = await fetch(url + num + "/");
   let data = await response.json();
   name.innerHTML = data.forms[0].name;
   img.src = data.sprites.other.dream_world.front_default;
-  smaller_div.addEventListener("click", () => {
+  pokeball_div.addEventListener("click", () => {
     if (img.style.visibility === "hidden") {
       let audio = document.createElement("audio");
-      audio.src = "pokeball_out.mp3";
+      audio.src = "/audiofile/pokeball_out.mp3";
       // body.appendChild(audio);
       audio.play();
       document.querySelector("audio").play();
-      smaller_div.style.backgroundImage =
-        "url('8-82928_open-pokeball-png-transparent-png-removebg-preview.png')";
+      pokeball_div.style.backgroundImage = "url('open_pokeball.png')";
       img.style.visibility = "visible";
       // console.log(num);
       choosen_pokemons_id.push(num);
@@ -54,22 +53,22 @@ const make_small_div = async (num) => {
           JSON.stringify(random_computer_pokemons)
         );
       } else if (counter == 6 && counter_2 < 6) {
-        if (c1 == 0) {
+        if (counter1 == 0) {
           alert("Complete pokemons for player 1 now work on player 2");
-          c1++;
+          counter1++;
         }
       } else if (counter_2 == 6 && counter < 6) {
-        if (c2 == 0) {
+        if (counter2 == 0) {
           alert("Complete pokemons for player 2 now work for player 1");
-          c2++;
+          counter2++;
         }
       }
     } else {
       choosen_pokemons_id.pop();
-      random_computer_pokemons.pop();
+      // random_computer_pokemons.pop();
       counter--;
-      smaller_div.style.backgroundImage =
-        "url('pngimg.com_-_pokeball_PNG7.png')";
+      pokeball_div.style.backgroundImage =
+        "url('/pokeballfile/closed_pokeball.png')";
       img.style.visibility = "hidden";
       console.log("else fi");
     }
@@ -88,23 +87,27 @@ if (battle_button) {
   });
 }
 
-for (let i = 1; i < 50; i++) {
-  make_small_div(Math.floor(Math.random()*50));
-  // make_small_div.id = i;
+for (let i = 1; i < 20; i++) {
+  let num = Math.floor(Math.random() * 500);
+  let response = await fetch(url + num + "/");
+  let data = await response.json();
+  if (data.forms[0].name) {
+    pokeball_formation_function(num);
+  }
 }
 
-const make_small_div2 = async (num) => {
-  let smaller_div = document.createElement("div");
-  smaller_div.id = num;
+const pokeball_formation_function2 = async (num) => {
+  let pokeball_div = document.createElement("div");
+  pokeball_div.id = num;
   let name = document.createElement("p");
   let img = document.createElement("img");
   img.style.visibility = "hidden";
   // img.style.scale = "1.2";
   img.style.height = "100px";
   img.style.width = "100px";
-  smaller_div.appendChild(img);
-  smaller_div.appendChild(name);
-  main_div_2.appendChild(smaller_div);
+  pokeball_div.appendChild(img);
+  pokeball_div.appendChild(name);
+  main_div_2.appendChild(pokeball_div);
   console.log(url + num + "/");
   let response = await fetch(url + num + "/");
   let data = await response.json();
@@ -112,14 +115,14 @@ const make_small_div2 = async (num) => {
   name.style.fontWeight = "bolder";
   name.style.fontSize = "1.35rem";
   img.src = data.sprites.other.dream_world.front_default;
-  smaller_div.addEventListener("click", () => {
+  pokeball_div.addEventListener("click", () => {
     if (img.style.visibility === "hidden") {
       let audio = document.createElement("audio");
-      audio.src = "pokeball_out.mp3";
+      audio.src = "/audiofile/pokeball_out.mp3";
       // body.appendChild(audio);
       audio.play();
-      smaller_div.style.backgroundImage =
-        "url('8-82928_open-pokeball-png-transparent-png-removebg-preview.png')";
+      pokeball_div.style.backgroundImage =
+        "url('open_pokeball.png')";
       img.style.visibility = "visible";
       // console.log(num);
       choosen_pokemons_id_2.push(num);
@@ -137,14 +140,14 @@ const make_small_div2 = async (num) => {
           JSON.stringify(choosen_pokemons_id_2)
         );
       } else if (counter == 6 && counter_2 < 6) {
-        if (c1 == 0) {
+        if (counter1 == 0) {
           alert("Complete pokemons for player 1 now work on player 2");
-          c1++;
+          counter1++;
         }
       } else if (counter_2 == 6 && counter < 6) {
-        if (c2 == 0) {
+        if (counter2 == 0) {
           alert("Complete pokemons for player 2 now work for player 1");
-          c2++;
+          counter2++;
         }
       }
     }
@@ -152,16 +155,22 @@ const make_small_div2 = async (num) => {
       choosen_pokemons_id_2.pop();
       // random_computer_pokemons.pop();
       counter_2--;
-      smaller_div.style.backgroundImage =
-        "url('pngimg.com_-_pokeball_PNG7.png')";
+      pokeball_div.style.backgroundImage =
+        "url('/pokeballfile/closed_pokeball.png')";
       img.style.visibility = "hidden";
       console.log("else fi");
     }
   });
 };
 
-for (let i = 1; i < 50; i++) {
-  make_small_div2(Math.floor(Math.random() * 50));
+for (let i = 1; i < 20; i++) {
+  let num = Math.floor(Math.random() * 500);
+  let response = await fetch(url + num + "/");
+  let data = await response.json();
+  if (data.forms[0].name) {
+    pokeball_formation_function2(num);
+  }
+
 }
 
 // alert("This is workimng")

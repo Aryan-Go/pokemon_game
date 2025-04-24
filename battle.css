@@ -57,14 +57,14 @@ div{
 }
 
 .player1 div{
-    background-image: url('pngimg.com_-_pokeball_PNG7.png');
+    background-image: url('/pokeballfile/closed_pokeball.png');
     background-repeat: no-repeat;
     background-size:contain;
     margin-bottom: 2rem;
 }
 
 .player2 div{
-    background-image: url('pngimg.com_-_pokeball_PNG7.png');
+    background-image: url('/pokeballfile/closed_pokeball.png');
     background-repeat: no-repeat;
     background-size:contain;
     margin-bottom: 2rem;

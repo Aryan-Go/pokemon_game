@@ -54,7 +54,7 @@ audio{
     width: 50%;
 }
 #main1 div{
-    background-image: url('pngimg.com_-_pokeball_PNG7.png');
+    background-image: url('/pokeballfile/closed_pokeball.png');
     background-repeat: no-repeat;
     background-size:contain;
     color:  #ff0000;
@@ -66,7 +66,7 @@ audio{
     /* border-radius: 45%; */
 }
 #main2 div{
-    background-image: url('pngimg.com_-_pokeball_PNG7.png');
+    background-image: url('/pokeballfile/closed_pokeball.png');
     background-repeat: no-repeat;
     background-size:contain;
     color:  #fd0000;

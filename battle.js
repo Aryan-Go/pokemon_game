@@ -15,8 +15,8 @@ class player {
 
 let player1;
 let player2;
-let c1 = 0;
-let c2 = 0;
+let counter1 = 0;
+let counter2 = 0;
 let b1 = 0;
 let b2 = 0;
 
@@ -45,29 +45,29 @@ let player2_div = document.querySelector(".player2");
 
 let url = "https://pokeapi.co/api/v2/pokemon/";
 
-const make_small_div = async (num) => {
-  let smaller_div = document.createElement("div");
-  smaller_div.id = num;
+const pokeball_formation = async (num) => {
+  let pokeball_div = document.createElement("div");
+  pokeball_div.id = num;
   let img = document.createElement("img");
   img.style.visibility = "hidden";
   img.style.scale = "3";
-  smaller_div.appendChild(img);
-  player1_div.appendChild(smaller_div);
+  pokeball_div.appendChild(img);
+  player1_div.appendChild(pokeball_div);
   console.log(url + num + "/");
   let response = await fetch(url + num + "/");
   let data = await response.json();
   img.src = data.sprites.front_default;
-  smaller_div.addEventListener("click", () => {
-    if (c1 == 0) {
+  pokeball_div.addEventListener("click", () => {
+    if (counter1 == 0) {
       if (img.style.visibility === "hidden") {
         let audio = document.createElement("audio");
-        audio.src = "pokeball_out.mp3";
+        audio.src = "/audiofile/pokeball_out.mp3";
         audio.play();
-        c1++;
+        counter1++;
         img.src = data.sprites.other.showdown.front_shiny;
         img.style.marginBottom = "30px";
-        smaller_div.style.backgroundImage =
-          "url('8-82928_open-pokeball-png-transparent-png-removebg-preview.png')";
+        pokeball_div.style.backgroundImage =
+          "url('/pokeballfile/open_pokeball.png')";
         img.style.visibility = "visible";
         p1.appendChild(img);
         player1 = new player(
@@ -129,7 +129,7 @@ const make_small_div = async (num) => {
               let text = document.createElement("p");
               text.innerHTML =
                 "Player 1 did " +
-                data.moves[1].move.name +
+                data.moves[0].move.name +
                 " on player 2 which caused a damage of " +
                 data_u.power * 0.1 +
                 "\n";
@@ -138,7 +138,7 @@ const make_small_div = async (num) => {
               textarea.appendChild(text);
               textarea.scrollTop = textarea.scrollHeight;
               let audio = document.createElement("audio");
-              audio.src = "punch.mp3";
+              audio.src = "/audiofile/punch.mp3";
               // body.appendChild(audio);
               audio.play();
               player2.health -= data_u.power * 0.1;
@@ -149,8 +149,8 @@ const make_small_div = async (num) => {
               // player1.health = 0;
               alert("Player 1 wins");
               player2.health = 0;
-              c2--;
-              // alert(c1);
+              counter2--;
+              // alert(counter1);
               setTimeout(() => {
                 while (p2.firstChild) {
                   p2.removeChild(p2.firstChild);
@@ -192,7 +192,7 @@ const make_small_div = async (num) => {
               
               
               let audio = document.createElement("audio");
-              audio.src = "punch.mp3";
+              audio.src = "/audiofile/punch.mp3";
               // body.appendChild(audio);
               audio.play();
               player2.health -= data_u.power * 0.1;
@@ -202,8 +202,8 @@ const make_small_div = async (num) => {
             } else {
               alert("Player 1 wins");
               player2.health = 0;
-              c2--;
-              // alert(c1);
+              counter2--;
+              // alert(counter1);
               setTimeout(() => {
                 while (p2.firstChild) {
                   p2.removeChild(p2.firstChild);
@@ -220,8 +220,8 @@ const make_small_div = async (num) => {
         p1.appendChild(reddiv);
         p1.appendChild(attackdiv);
       } else {
-        smaller_div.style.backgroundImage =
-          "url('pngimg.com_-_pokeball_PNG7.png')";
+        pokeball_div.style.backgroundImage =
+          "url('closed_pokeball.png')";
         img.style.visibility = "hidden";
         //   console.log("else fi");
       }
@@ -230,38 +230,38 @@ const make_small_div = async (num) => {
 };
 for (let i = 0; i < choosen_pokemons_id.length; i++) {
   //   console.log(choosen_pokemons_id);
-  make_small_div(choosen_pokemons_id[i]);
-  // make_small_div.id = i;
+  pokeball_formation(choosen_pokemons_id[i]);
+  // pokeball_formation.id = i;
 }
 
-const make_small_div_2 = async (num) => {
-  let smaller_div = document.createElement("div");
-  smaller_div.id = num;
+const pokeball_formation_2 = async (num) => {
+  let pokeball_div = document.createElement("div");
+  pokeball_div.id = num;
   //   let name = document.createElement("p");
   let img = document.createElement("img");
   img.style.visibility = "hidden";
   img.style.scale = "3";
-  smaller_div.appendChild(img);
-  //   smaller_div.appendChild(name);
-  player2_div.appendChild(smaller_div);
+  pokeball_div.appendChild(img);
+  //   pokeball_div.appendChild(name);
+  player2_div.appendChild(pokeball_div);
   console.log(url + num + "/");
   let response = await fetch(url + num + "/");
   let data = await response.json();
   //   name.innerHTML = data.forms[0].name;
   img.src = data.sprites.front_default;
-  // smaller_div.click();
-  smaller_div.addEventListener("click", () => {
-    if (c2 == 0) {
+  // pokeball_div.click();
+  pokeball_div.addEventListener("click", () => {
+    if (counter2 == 0) {
       if (img.style.visibility === "hidden") {
         let audio = document.createElement("audio");
-        audio.src = "pokeball_out.mp3";
+        audio.src = "/audiofile/pokeball_out.mp3";
         // body.appendChild(audio);
         audio.play();
-        c2++;
+        counter2++;
         img.src = data.sprites.other.showdown.front_shiny;
         img.style.marginBottom = "30px";
-        smaller_div.style.backgroundImage =
-          "url('8-82928_open-pokeball-png-transparent-png-removebg-preview.png')";
+        pokeball_div.style.backgroundImage =
+          "url('/pokeballfile/open_pokeball.png')";
         img.style.visibility = "visible";
         // img.style.marginLeft = "35rem";
         // img.style.marginTop = "10rem";
@@ -327,7 +327,7 @@ const make_small_div_2 = async (num) => {
               let text = document.createElement("p");
               text.innerHTML =
                 "Player 1 did " +
-                data.moves[1].move.name +
+                data.moves[0].move.name +
                 " on player 2 which caused a damage of " +
                 data_u.power * 0.1 +
                 "\n";
@@ -336,7 +336,7 @@ const make_small_div_2 = async (num) => {
               textarea.appendChild(text);
               textarea.scrollTop = textarea.scrollHeight;
               let audio = document.createElement("audio");
-              audio.src = "punch.mp3";
+              audio.src = "/audiofile/punch.mp3";
               // body.appendChild(audio);
               audio.play();
               player1.health -= data_u.power * 0.1;
@@ -346,8 +346,8 @@ const make_small_div_2 = async (num) => {
             } else {
               // alert("in");
               player1.health = 0;
-              c1--;
-              // alert(c1);
+              counter1--;
+              // alert(counter1);
               alert("Player 2 wins");
               setTimeout(() => {
                 while (p1.firstChild) {
@@ -391,7 +391,7 @@ const make_small_div_2 = async (num) => {
               textarea.scrollTop = textarea.scrollHeight;
               
               let audio = document.createElement("audio");
-              audio.src = "punch.mp3";
+              audio.src = "/audiofile/punch.mp3";
               // body.appendChild(audio);
               audio.play();
               player1.health -= data_u.power * 0.1;
@@ -400,8 +400,8 @@ const make_small_div_2 = async (num) => {
               ht1.style.width = player1.health + "%";
             } else {
               player1.health = 0;
-              c1--;
-              // alert(c1);
+              counter1--;
+              // alert(counter1);
               alert("Player 2 wins");
               setTimeout(() => {
                 while (p1.firstChild) {
@@ -419,18 +419,18 @@ const make_small_div_2 = async (num) => {
         p2.appendChild(reddiv);
         p2.appendChild(attackdiv);
       } else {
-        smaller_div.style.backgroundImage =
-          "url('pngimg.com_-_pokeball_PNG7.png')";
+        pokeball_div.style.backgroundImage =
+          "url('closed_pokeball.png')";
         img.style.visibility = "hidden";
       }
     }
   });
 };
-const computer_ka_kaam = async () => {
+const pokeball_insertion = async () => {
   for (let i = 0; i < choosen_pokemons_id_2.length; i++) {
-    await make_small_div_2(choosen_pokemons_id_2[i]);
-    // make_small_div.id = i;
+    await pokeball_formation_2(choosen_pokemons_id_2[i]);
+    // pokeball_formation.id = i;
   }
 };
 
-computer_ka_kaam();
+pokeball_insertion();

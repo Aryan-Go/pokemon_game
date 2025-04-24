@@ -1,0 +1,93 @@
+body{
+    background-image: url('https://wallpapercave.com/wp/wp1902707.jpg');
+    background-size:100% 110%;
+    background-repeat:no-repeat;
+}
+audio{
+    display: none;
+}
+#battle{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 20%;
+    background-image:url('https://www.pokemon.com/static-assets/content-assets/cms2/img/video-games/_tiles/pokemon-go/2025/04/04/pokemon-go-169.png');
+    background-size:100% 100%;
+    color: red;
+}
+#battle:hover{
+    transition: 0.5s;
+    scale: 1.1;
+}
+.pokemon-text{
+    height: 20%;
+    width: 106%;
+}
+.title_button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#title{
+    height: 10rem;
+}
+
+#main1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    width: 50%;
+    /* padding-right:0.0rem; */
+}
+#main2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    width: 50%;
+}
+#main1 div{
+    background-image: url('pngimg.com_-_pokeball_PNG7.png');
+    background-repeat: no-repeat;
+    background-size:contain;
+    color:  #ff0000;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    margin: 0.5rem;
+    /* border-radius: 45%; */
+}
+#main2 div{
+    background-image: url('pngimg.com_-_pokeball_PNG7.png');
+    background-repeat: no-repeat;
+    background-size:contain;
+    color:  #fd0000;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    margin: 0.5rem;
+}
+
+#main1 div:hover{
+    transition: 0.5s;
+    scale: 1.15;
+}
+#main2 div:hover{
+    transition: 0.5s;
+    scale: 1.15;
+}
+#main{
+    flex-direction : row;
+    display:flex;
+    flex-wrap:wrap;
+    /* margin-right:0.2rem; */
+}

@@ -1,0 +1,82 @@
+/* body{
+    
+} */
+body{
+    background-image: url('https://imgs.search.brave.com/ZeUeY4i6X-2mts6UEP0ovovIcjA2Vz3A9qo6izjraWk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA2LzYzLzc1Lzk3/LzM2MF9GXzY2Mzc1/OTc0Ml81b1BmbnFJ/WFdEVGlGN2FYdnN0/THRhN2JTbnllQTJH/eC5qcGc');
+    background-size:100% 150%;
+    /* background-position: center center; */
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+audio{
+    display: none;
+}
+textarea{
+    background-color: antiquewhite;
+    /* top: 100; */
+    bottom: 2rem;
+    /* right: 0.1rem; */
+    right: 10rem;
+    height: 15%;
+    /* white-space: pre-wrap; */
+   width: 80%;
+   position: absolute;
+}
+.player1{
+    width: 15%;
+    /* background-color: rgb(0, 0, 0); */
+    /* height:100%; */
+    /* justify-content: center; */
+    padding-top: 2rem;
+    align-items: space-around;
+}
+.main_ground{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+}
+.player2{
+    width: 15%;
+    /* background-color: rgb(0, 0, 0); */
+    /* height: 100%; */
+    padding-top: 2rem;
+    /* justify-content: center; */
+    align-items: space-between;
+}
+
+.p1{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.p2{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+
+.player1 div{
+    background-image: url('pngimg.com_-_pokeball_PNG7.png');
+    background-repeat: no-repeat;
+    background-size:contain;
+    margin-bottom: 2rem;
+
+    /* border-radius: 45%; */
+}
+
+.player2 div{
+    background-image: url('pngimg.com_-_pokeball_PNG7.png');
+    background-repeat: no-repeat;
+    background-size:contain;
+    margin-bottom: 2rem;
+    /* border-radius: 45%; */
+}

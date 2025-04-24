@@ -1,11 +1,9 @@
-
-
 let healthtext2 = document.createElement("div");
 let attackdiv2 = document.createElement("div");
 let buttonheavy2 = document.createElement("div");
 let buttonlight2 = document.createElement("div");
 class player {
-  constructor(health, attack1, attack2,id) {
+  constructor(health, attack1, attack2, id) {
     this.health = health;
     this.attack1 = attack1;
     this.attack2 = attack2;
@@ -24,7 +22,6 @@ let body = document.querySelector("body");
 
 let textarea = document.querySelector(".textarea");
 // textarea.scrollIntoView();
-
 
 window.onload = () => {
   document.querySelector("audio").play();
@@ -73,7 +70,8 @@ const pokeball_formation = async (num) => {
         player1 = new player(
           data.stats[0].base_stat,
           data.moves[0].move.name,
-          data.moves[1].move.name,"htp1"
+          data.moves[1].move.name,
+          "htp1"
         );
         let reddiv = document.createElement("div");
         let healthtext = document.createElement("div");
@@ -87,7 +85,7 @@ const pokeball_formation = async (num) => {
 
         healthtext.id = player1.id;
         healthtext.style.backgroundColor = "green";
-        healthtext.style.width = player1.health+"%";
+        healthtext.style.width = player1.health + "%";
         healthtext.innerHTML = "Health" + player1.health;
 
         healthtext.style.fontSize = "1.875rem";
@@ -111,7 +109,6 @@ const pokeball_formation = async (num) => {
         attackdiv.style.justifyContent = "space-around";
         attackdiv.style.marginTop = "0.625rem";
         buttonheavy.addEventListener("click", async () => {
-          
           let u;
           let response_u;
           let data_u;
@@ -180,16 +177,15 @@ const pokeball_formation = async (num) => {
               let text = document.createElement("p");
               text.innerHTML =
                 "Player 1 did " +
-              data.moves[1].move.name +
-              " on player 2 which caused a damage of " +
-              data_u.power * 0.1 +
-              "\n";
+                data.moves[1].move.name +
+                " on player 2 which caused a damage of " +
+                data_u.power * 0.1 +
+                "\n";
               text.style.fontSize = "1.875rem";
               text.style.color = "blue";
               textarea.appendChild(text);
               textarea.scrollTop = textarea.scrollHeight;
-              
-              
+
               let audio = document.createElement("audio");
               audio.src = "/audiofile/punch.mp3";
               // body.appendChild(audio);
@@ -219,8 +215,7 @@ const pokeball_formation = async (num) => {
         p1.appendChild(reddiv);
         p1.appendChild(attackdiv);
       } else {
-        pokeball_div.style.backgroundImage =
-          "url('closed_pokeball.png')";
+        pokeball_div.style.backgroundImage = "url('closed_pokeball.png')";
         img.style.visibility = "hidden";
         //   console.log("else fi");
       }
@@ -269,22 +264,23 @@ const pokeball_formation_2 = async (num) => {
         player2 = new player(
           data.stats[0].base_stat,
           data.moves[0].move.name,
-          data.moves[1].move.name,"htp2"
+          data.moves[1].move.name,
+          "htp2"
         );
         let reddiv = document.createElement("div");
         let healthtext = document.createElement("div");
         let attackdiv = document.createElement("div");
         let buttonheavy = document.createElement("div");
         let buttonlight = document.createElement("div");
-        
+
         reddiv.style.width = "100%";
         // reddiv.style.height = "50%";
         reddiv.style.marginTop = "3rem";
         reddiv.style.backgroundColor = "red";
-        
+
         healthtext.id = player2.id;
         healthtext.style.backgroundColor = "green";
-        healthtext.style.width = player2.health+"%";
+        healthtext.style.width = player2.health + "%";
         // healthtext.style.marginTop = "-100%";
         healthtext.innerHTML = "Health" + player2.health;
         healthtext.style.fontSize = "1.875rem";
@@ -376,15 +372,16 @@ const pokeball_formation_2 = async (num) => {
               let text = document.createElement("p");
               // p.id = "heyyyy"
               text.style.color = "red";
-              text.innerHTML = "Player 1 did " +
-              data.moves[1].move.name +
-              " on player 2 which caused a damage of " +
-              data_u.power * 0.1 +
+              text.innerHTML =
+                "Player 1 did " +
+                data.moves[1].move.name +
+                " on player 2 which caused a damage of " +
+                data_u.power * 0.1 +
                 "\n";
               text.style.fontSize = "1.875rem";
               textarea.appendChild(text);
               textarea.scrollTop = textarea.scrollHeight;
-              
+
               let audio = document.createElement("audio");
               audio.src = "/audiofile/punch.mp3";
               // body.appendChild(audio);
@@ -410,12 +407,11 @@ const pokeball_formation_2 = async (num) => {
           ht1.innerHTML = "Health" + player1.health;
           //   text1 = "Health" + player1.health;
         });
-        reddiv.appendChild(healthtext)
+        reddiv.appendChild(healthtext);
         p2.appendChild(reddiv);
         p2.appendChild(attackdiv);
       } else {
-        pokeball_div.style.backgroundImage =
-          "url('closed_pokeball.png')";
+        pokeball_div.style.backgroundImage = "url('closed_pokeball.png')";
         img.style.visibility = "hidden";
       }
     }

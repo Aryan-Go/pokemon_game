@@ -1,71 +1,71 @@
 /* body{
     
 } */
-body{
-    background-image: url('https://imgs.search.brave.com/ZeUeY4i6X-2mts6UEP0ovovIcjA2Vz3A9qo6izjraWk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA2LzYzLzc1Lzk3/LzM2MF9GXzY2Mzc1/OTc0Ml81b1BmbnFJ/WFdEVGlGN2FYdnN0/THRhN2JTbnllQTJH/eC5qcGc');
-    background-size:100% 150%;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+body {
+  background-image: url("https://imgs.search.brave.com/ZeUeY4i6X-2mts6UEP0ovovIcjA2Vz3A9qo6izjraWk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA2LzYzLzc1Lzk3/LzM2MF9GXzY2Mzc1/OTc0Ml81b1BmbnFJ/WFdEVGlGN2FYdnN0/THRhN2JTbnllQTJH/eC5qcGc");
+  background-size: 100% 150%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-audio{
-    display: none;
+audio {
+  display: none;
 }
-.textarea{
-    background-color: antiquewhite;
-    overflow:auto;
-    bottom: 1rem;
-    right: 13.5rem;
-    height: 15%;
-   width: 75%;
-   position: absolute;
+.textarea {
+  background-color: antiquewhite;
+  overflow: auto;
+  bottom: 1rem;
+  right: 13.5rem;
+  height: 15%;
+  width: 75%;
+  position: absolute;
 }
-div{
-    cursor:pointer;
+div {
+  cursor: pointer;
 }
-.player1{
-    width: 15%;
-    padding-top: 2rem;
-    align-items: space-around;
+.player1 {
+  width: 15%;
+  padding-top: 2rem;
+  align-items: space-around;
 }
-.main_ground{
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    justify-content: space-around;
-    align-items: center;
-    width: 90%;
+.main_ground {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
 }
-.player2{
-    width: 15%;
-    padding-top: 2rem;
-    align-items: space-between;
-}
-
-.p1{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.player2 {
+  width: 15%;
+  padding-top: 2rem;
+  align-items: space-between;
 }
 
-.p2{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.p1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.player1 div{
-    background-image: url('/pokeballfile/closed_pokeball.png');
-    background-repeat: no-repeat;
-    background-size:contain;
-    margin-bottom: 2rem;
+.p2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.player2 div{
-    background-image: url('/pokeballfile/closed_pokeball.png');
-    background-repeat: no-repeat;
-    background-size:contain;
-    margin-bottom: 2rem;
+.player1 div {
+  background-image: url("/pokeballfile/closed_pokeball.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-bottom: 2rem;
+}
+
+.player2 div {
+  background-image: url("/pokeballfile/closed_pokeball.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-bottom: 2rem;
 }

@@ -79,11 +79,9 @@ if (battle_button) {
     if (counter < 6 || counter_2 < 6) {
       alert("Please choose " + (6 - counter) + " more pokemons for player 1");
       alert("Please choose " + (6 - counter_2) + " more pokemons for player 2");
-    } 
-    else {
+    } else {
       window.location.href = "battle.html";
     }
-    
   });
 }
 
@@ -121,8 +119,7 @@ const pokeball_formation_function2 = async (num) => {
       audio.src = "/audiofile/pokeball_out.mp3";
       // body.appendChild(audio);
       audio.play();
-      pokeball_div.style.backgroundImage =
-        "url('open_pokeball.png')";
+      pokeball_div.style.backgroundImage = "url('open_pokeball.png')";
       img.style.visibility = "visible";
       // console.log(num);
       choosen_pokemons_id_2.push(num);
@@ -150,8 +147,7 @@ const pokeball_formation_function2 = async (num) => {
           counter2++;
         }
       }
-    }
-    else {
+    } else {
       choosen_pokemons_id_2.pop();
       // random_computer_pokemons.pop();
       counter_2--;
@@ -170,7 +166,6 @@ for (let i = 1; i < 20; i++) {
   if (data.forms[0].name) {
     pokeball_formation_function2(num);
   }
-
 }
 
 // alert("This is workimng")

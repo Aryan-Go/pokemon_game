@@ -44,14 +44,15 @@ audio {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 50%;
-  /* padding-right:0.0rem; */
+  width: 45%;
+  margin-right:6rem;
 }
 #main2 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 50%;
+  width: 45%;
+  margin-left: 3.05rem;
 }
 #main1 div {
   background-image: url("/pokeballfile/closed_pokeball.png");
@@ -90,4 +91,58 @@ audio {
   display: flex;
   flex-wrap: wrap;
   /* margin-right:0.2rem; */
+}
+.playertext{
+  width: 100%;
+  text-align: center;
+  color: yellow;
+  font-weight: bolder;
+  font-size: 5rem;
+}
+#info{
+  background-image: url("https://imgs.search.brave.com/_fwszPKXgPGgZbGboyM7GJdzWzsljj1eYQMAcCmpSS4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNy8w/My8xNy8wNS8yMS9p/bmZvLTIxNTA5NDFf/NjQwLnBuZw");
+  background-size: 100% 100%;
+  width: 5rem;
+  height: 5rem;
+  margin-left: 3rem;
+  border-radius: 20%;
+}
+#info:hover{
+  scale: 1.1;
+  transition: 0.5s;
+}
+
+.infopage{
+  /* visibility: visible; */
+  left: 8rem;
+  position: absolute;
+  width: 80%;
+  height: 90%;
+  background-image: linear-gradient(90deg,rgba(0, 166, 232, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);;
+  color: rgb(51, 15, 255);
+  border-radius: 5%;
+ 
+}
+.align_text{
+   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.ash_gif{
+  height: 30em;
+  margin-left: 1rem;
+  border-radius: 10%;
+}
+
+.info_title{
+  text-align: center;
+  font-size: 4rem;
+  color: #fd0000;
+}
+li{
+  font-size: 1.5rem;
+}
+.text{
+  margin-right: 1rem;
 }

@@ -7,6 +7,19 @@ let counter = 0;
 let counter_2 = 0;
 let counter1 = 0;
 let counter2 = 0;
+let info_button = document.querySelector("#info");
+let infopage = document.querySelector(".infopage");
+// infopage.style.visibility = "visible";
+info_button.addEventListener("click", () => {
+  // alert("working");
+  // alert(infopage.style.visibility);
+  if (infopage.style.visibilty === "visible") {
+    infopage.style.visibilty = "hidden";
+  }
+  else {
+    infopage.style.visibilty = "visible";
+  }
+})
 
 // let body = document.getElementById("body");
 let url = "https://pokeapi.co/api/v2/pokemon/";

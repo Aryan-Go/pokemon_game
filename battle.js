@@ -73,31 +73,52 @@ const pokeball_formation = async (num) => {
           data.moves[1].move.name,
           "htp1"
         );
+        p1.style.marginTop = "24rem";
         let reddiv = document.createElement("div");
         let healthtext = document.createElement("div");
         let attackdiv = document.createElement("div");
         let buttonheavy = document.createElement("div");
         let buttonlight = document.createElement("div");
+        let healthtextp = document.createElement("p");
 
-        reddiv.style.width = "100%";
-        reddiv.style.marginTop = "3rem";
+        reddiv.style.width = player1.health + "%";
+        reddiv.style.marginTop = "-2.2rem"
+        reddiv.style.zIndex = -1;
+        reddiv.style.height = "2rem";
         reddiv.style.backgroundColor = "red";
+        reddiv.style.border = "white 0.2rem solid";
+        reddiv.style.borderRadius = "1rem";
+        
+        healthtextp.innerHTML = "Health" + player1.health;
+        healthtextp.id = "health1";
+        healthtextp.style.backgroundColor = "#86a93c";
+        healthtextp.style.border = "white 0.2rem solid";
+        healthtextp.style.borderRadius = "1rem";
+        healthtextp.style.padding = "1rem";
 
         healthtext.id = player1.id;
+        healthtext.style.marginTop = "5rem";
         healthtext.style.backgroundColor = "green";
+        healthtext.style.height = "2rem";
         healthtext.style.width = player1.health + "%";
-        healthtext.innerHTML = "Health" + player1.health;
+        healthtext.style.borderRadius = "1rem";
+        
+        // healthtext.innerHTML = "Health" + player1.health;
 
         healthtext.style.fontSize = "1.875rem";
-        buttonheavy.style.backgroundColor = "#EF0307";
+        buttonheavy.style.backgroundColor = "#d35f56";
         buttonheavy.innerHTML = player1.attack1;
         buttonlight.innerHTML = player1.attack2;
         buttonheavy.style.marginRight = "0.625rem";
         attackdiv.style.width = "200%";
-        attackdiv.style.height = "200%";
+        attackdiv.style.height = "150%";
         buttonheavy.style.width = "100%";
         buttonheavy.style.height = "2.5rem";
-        buttonlight.style.backgroundColor = "	#00FFFF";
+        buttonheavy.style.border = "white 0.2rem solid";
+        buttonheavy.style.borderRadius = "1rem";
+        buttonlight.style.border = "white 0.2rem solid";
+        buttonlight.style.borderRadius = "1rem";
+        buttonlight.style.backgroundColor = "#e2e1d9";
         buttonlight.style.width = "100%";
         buttonlight.style.fontSize = "1.25rem";
         buttonheavy.style.fontSize = "1.25rem";
@@ -140,8 +161,9 @@ const pokeball_formation = async (num) => {
               audio.play();
               player2.health -= data_u.power * 0.1;
               let ht2 = p2.querySelector("#htp2");
-              ht2.innerHTML = "Health" + player2.health;
               ht2.style.width = player2.health + "%";
+              let hp2 = p2.querySelector("#health2");
+              hp2.innerHTML = "Health = " + player2.health;
             } else {
               // player1.health = 0;
               alert("Player 1 wins");
@@ -157,7 +179,8 @@ const pokeball_formation = async (num) => {
           }
           console.log(data_u);
           let ht2 = p2.querySelector("#htp2");
-          ht2.innerHTML = "Health" + player2.health;
+          let hp1 = p1.querySelector("#health1");
+          hp1.innerHTML = "Health = " + player1.health;
         });
         buttonlight.addEventListener("click", async () => {
           let u;
@@ -192,8 +215,9 @@ const pokeball_formation = async (num) => {
               audio.play();
               player2.health -= data_u.power * 0.1;
               let ht2 = p2.querySelector("#htp2");
-              ht2.innerHTML = "Health" + player2.health;
               ht2 = player2.health + "%";
+              let hp2 = p2.querySelector("#health2");
+              hp2.innerHTML = "Health = " + player2.health;
             } else {
               alert("Player 1 wins");
               player2.health = 0;
@@ -209,10 +233,12 @@ const pokeball_formation = async (num) => {
           // text2 = "Health" + player2.health;
           console.log(data_u);
           let ht2 = p2.querySelector("#htp2");
-          ht2.innerHTML = "Health" + player2.health;
+          let hp2 = p2.querySelector("#health2");
+          hp2.innerHTML = "Health = " + player2.health;
         });
-        reddiv.appendChild(healthtext);
+        p1.appendChild(healthtext);
         p1.appendChild(reddiv);
+        p1.appendChild(healthtextp);
         p1.appendChild(attackdiv);
       } else {
         pokeball_div.style.backgroundImage = "url('closed_pokeball.png')";
@@ -260,6 +286,7 @@ const pokeball_formation_2 = async (num) => {
         img.style.visibility = "visible";
         // img.style.marginLeft = "35rem";
         // img.style.marginTop = "10rem";
+        p2.style.marginTop = "24rem";
         p2.appendChild(img);
         player2 = new player(
           data.stats[0].base_stat,
@@ -272,27 +299,43 @@ const pokeball_formation_2 = async (num) => {
         let attackdiv = document.createElement("div");
         let buttonheavy = document.createElement("div");
         let buttonlight = document.createElement("div");
+        let healthtextp = document.createElement("p");
 
-        reddiv.style.width = "100%";
-        // reddiv.style.height = "50%";
-        reddiv.style.marginTop = "3rem";
+        reddiv.style.width = player2.health + "%";
+        reddiv.style.marginTop = "-2.2rem";
+        reddiv.style.zIndex = -1;
+        reddiv.style.height = "2rem";
         reddiv.style.backgroundColor = "red";
-
+        reddiv.style.border = "white 0.2rem solid"
+        reddiv.style.borderRadius = "1rem"
+        
+        healthtextp.innerHTML = "Health" + player2.health;
+        healthtextp.id = "health2";
+        healthtextp.style.backgroundColor = "#86a93c";
+        healthtextp.style.border = "white 0.2rem solid";
+        healthtextp.style.borderRadius = "1rem";
+        healthtextp.style.padding = "1rem";
         healthtext.id = player2.id;
+        healthtext.style.marginTop = "5rem";
         healthtext.style.backgroundColor = "green";
+        healthtext.style.height = "2rem";
         healthtext.style.width = player2.health + "%";
+        healthtext.style.borderRadius = "1rem"
         // healthtext.style.marginTop = "-100%";
-        healthtext.innerHTML = "Health" + player2.health;
         healthtext.style.fontSize = "1.875rem";
-        buttonheavy.style.backgroundColor = "#EF0307";
+        buttonheavy.style.backgroundColor = "#d35f56";
         buttonheavy.innerHTML = player2.attack1;
         buttonlight.innerHTML = player2.attack2;
         buttonheavy.style.marginRight = "0.625rem";
+        buttonheavy.style.border = "white 0.2rem solid";
+        buttonheavy.style.borderRadius = "1rem";
+        buttonlight.style.border = "white 0.2rem solid";
+        buttonlight.style.borderRadius = "1rem";
         attackdiv.style.width = "200%";
-        attackdiv.style.height = "200%";
+        attackdiv.style.height = "150%";
         buttonheavy.style.width = "100%";
         buttonheavy.style.height = "2.5rem";
-        buttonlight.style.backgroundColor = "	#00FFFF";
+        buttonlight.style.backgroundColor = "	#e2e1d9";
         buttonlight.style.width = "100%";
         buttonlight.style.fontSize = "1.25rem";
         buttonheavy.style.fontSize = "1.25rem";
@@ -334,8 +377,9 @@ const pokeball_formation_2 = async (num) => {
               audio.play();
               player1.health -= data_u.power * 0.1;
               let ht1 = p1.querySelector("#htp1");
-              ht1.innerHTML = "Health" + player1.health;
               ht1.style.width = player1.health + "%";
+              let hp1 = p1.querySelector("#health1");
+              hp1.innerHTML = "Health = " + player1.health;
             } else {
               // alert("in");
               player1.health = 0;
@@ -352,7 +396,6 @@ const pokeball_formation_2 = async (num) => {
           }
 
           let ht1 = p1.querySelector("#htp1");
-          ht1.innerHTML = "Health" + player1.health;
           // text1 = "Health" + player1.health;
         });
         buttonlight.addEventListener("click", async () => {
@@ -388,8 +431,8 @@ const pokeball_formation_2 = async (num) => {
               audio.play();
               player1.health -= data_u.power * 0.1;
               let ht1 = p1.querySelector("#htp1");
-              ht1.innerHTML = "Health" + player1.health;
-              ht1.style.width = player1.health + "%";
+              let hp1 = p1.querySelector("health1");
+              hp1.innerHTML = "Health = " + player1.health;
             } else {
               player1.health = 0;
               counter1--;
@@ -404,11 +447,13 @@ const pokeball_formation_2 = async (num) => {
             }
           }
           let ht1 = p1.querySelector("#htp1");
-          ht1.innerHTML = "Health" + player1.health;
           //   text1 = "Health" + player1.health;
+          let hp1 = p1.querySelector("#health1");
+          hp1.innerHTML = "Health = " + player1.health;
         });
-        reddiv.appendChild(healthtext);
+        p2.appendChild(healthtext);
         p2.appendChild(reddiv);
+        p2.appendChild(healthtextp);
         p2.appendChild(attackdiv);
       } else {
         pokeball_div.style.backgroundImage = "url('closed_pokeball.png')";

@@ -2,24 +2,27 @@
     
 } */
 body {
-  background-image: url("https://imgs.search.brave.com/ZeUeY4i6X-2mts6UEP0ovovIcjA2Vz3A9qo6izjraWk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA2LzYzLzc1Lzk3/LzM2MF9GXzY2Mzc1/OTc0Ml81b1BmbnFJ/WFdEVGlGN2FYdnN0/THRhN2JTbnllQTJH/eC5qcGc");
-  background-size: 100% 150%;
+  background-image: url("/pokeballfile/battle_ground.png");
+  background-size: 100% 120%;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  font-family: 'Pixelify Sans' , sans-serif
 }
 audio {
   display: none;
 }
 
 .textarea {
-  background-color: #282828;
+  background-color: rgb(8, 131, 255);
+  z-index: 1;
+  background-size: 100% 100%;
   color: #F1F1EC;
   overflow: auto;
   padding-top: 1rem;
-  bottom: 1rem;
+  top: 1rem;
   right: 19rem;
   height: 15%;
   width: 60%;

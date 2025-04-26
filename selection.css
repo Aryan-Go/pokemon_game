@@ -2,27 +2,23 @@ body {
   background-image: url("https://wallpapercave.com/wp/wp1902707.jpg");
   background-size: 100% 110%;
   background-repeat: no-repeat;
-  font-family: 'CustomFont';
-  src: url('/fonts/fonts.ttf') format('truetype');
+  font-family: 'Pixelify Sans' , sans-serif
 }
 audio {
   display: none;
 }
 #battle {
-  width: 10rem;
-  height: 10rem;
-  border-radius: 20%;
-  background-image: url("https://www.pokemon.com/static-assets/content-assets/cms2/img/video-games/_tiles/pokemon-go/2025/04/04/pokemon-go-169.png");
+  width: 13rem;
+  height: 3rem;
+  border-radius: 1rem;
   background-size: 100% 100%;
   color: red;
+  font-size: 1.5rem;
+  font-family: 'Pixelify Sans' , sans-serif
 }
 #battle:hover {
   transition: 0.5s;
   scale: 1.1;
-}
-.pokemon-text {
-  height: 20%;
-  width: 106%;
 }
 .title_button {
   display: flex;
@@ -40,6 +36,7 @@ audio {
 
 #title {
   height: 10rem;
+  margin-left: 15rem;
 }
 
 #main1 {
@@ -105,7 +102,7 @@ audio {
   background-image: url("https://imgs.search.brave.com/_fwszPKXgPGgZbGboyM7GJdzWzsljj1eYQMAcCmpSS4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNy8w/My8xNy8wNS8yMS9p/bmZvLTIxNTA5NDFf/NjQwLnBuZw");
   background-size: 100% 100%;
   width: 5rem;
-  height: 5rem;
+  height: 4rem;
   margin-left: 3rem;
   border-radius: 20%;
 }
@@ -120,8 +117,8 @@ audio {
   position: absolute;
   width: 80%;
   height: 90%;
-  background-image: linear-gradient(90deg,rgba(0, 166, 232, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);;
-  color: rgb(51, 15, 255);
+  background-color: rgb(101, 217, 38);
+  color: rgb(15, 119, 255);
   border-radius: 5%;
  
 }

@@ -131,7 +131,7 @@ const pokeball_formation = async (num) => {
                 data_u.power * 0.1 +
                 "\n";
               text.style.fontSize = "1.875rem";
-              text.style.color = "blue";
+              // text.style.color = "blue";
               textarea.appendChild(text);
               textarea.scrollTop = textarea.scrollHeight;
               let audio = document.createElement("audio");
@@ -182,7 +182,7 @@ const pokeball_formation = async (num) => {
                 data_u.power * 0.1 +
                 "\n";
               text.style.fontSize = "1.875rem";
-              text.style.color = "blue";
+              // text.style.color = "blue";
               textarea.appendChild(text);
               textarea.scrollTop = textarea.scrollHeight;
 
@@ -325,7 +325,7 @@ const pokeball_formation_2 = async (num) => {
                 data_u.power * 0.1 +
                 "\n";
               text.style.fontSize = "1.875rem";
-              text.style.color = "red";
+              // text.style.color = "red";
               textarea.appendChild(text);
               textarea.scrollTop = textarea.scrollHeight;
               let audio = document.createElement("audio");
@@ -371,7 +371,7 @@ const pokeball_formation_2 = async (num) => {
             if (player1.health >= data_u.power * 0.1) {
               let text = document.createElement("p");
               // p.id = "heyyyy"
-              text.style.color = "red";
+              // text.style.color = "red";
               text.innerHTML =
                 "Player 1 did " +
                 data.moves[1].move.name +

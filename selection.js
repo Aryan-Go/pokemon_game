@@ -13,11 +13,11 @@ let infopage = document.querySelector(".infopage");
 info_button.addEventListener("click", () => {
   // alert("working");
   // alert(infopage.style.visibility);
-  if (infopage.style.visibilty === "visible") {
-    infopage.style.visibilty = "hidden";
+  if (infopage.style.visibility === "visible") {
+    infopage.style.visibility = "hidden";
   }
   else {
-    infopage.style.visibilty = "visible";
+    infopage.style.visibility = "visible";
   }
 })
 
@@ -44,16 +44,18 @@ const pokeball_formation_function = async (num) => {
   img.src = data.sprites.other.dream_world.front_default;
   pokeball_div.addEventListener("click", () => {
     if (img.style.visibility === "hidden") {
-      let audio = document.createElement("audio");
-      audio.src = "/audiofile/pokeball_out.mp3";
-      // body.appendChild(audio);
-      audio.play();
-      document.querySelector("audio").play();
-      pokeball_div.style.backgroundImage = "url('open_pokeball.png')";
-      img.style.visibility = "visible";
-      // console.log(num);
-      choosen_pokemons_id.push(num);
-      counter++;
+      if (counter < 6) {
+        let audio = document.createElement("audio");
+        audio.src = "/audiofile/pokeball_out.mp3";
+        // body.appendChild(audio);
+        audio.play();
+        document.querySelector("audio").play();
+        pokeball_div.style.backgroundImage = "url('open_pokeball.png')";
+        img.style.visibility = "visible";
+        // console.log(num);
+        choosen_pokemons_id.push(num);
+        counter++;
+      }
       // console.log("if");
       if (counter == 6 && counter_2 == 6) {
         alert("now you can click battle");
@@ -98,14 +100,18 @@ if (battle_button) {
   });
 }
 
-for (let i = 1; i < 20; i++) {
+const pokeball_checking_formation = async () => {
+  for (let i = 1; i < 20; i++) {
   let num = Math.floor(Math.random() * 500);
   let response = await fetch(url + num + "/");
   let data = await response.json();
   if (data.forms[0].name) {
     pokeball_formation_function(num);
+    }
   }
 }
+pokeball_checking_formation();
+
 
 const pokeball_formation_function2 = async (num) => {
   let pokeball_div = document.createElement("div");
@@ -128,17 +134,19 @@ const pokeball_formation_function2 = async (num) => {
   img.src = data.sprites.other.dream_world.front_default;
   pokeball_div.addEventListener("click", () => {
     if (img.style.visibility === "hidden") {
-      let audio = document.createElement("audio");
-      audio.src = "/audiofile/pokeball_out.mp3";
-      // body.appendChild(audio);
-      audio.play();
-      pokeball_div.style.backgroundImage = "url('open_pokeball.png')";
-      img.style.visibility = "visible";
-      // console.log(num);
-      choosen_pokemons_id_2.push(num);
-      counter_2++;
-      // alert(counter_2);
-      // console.log("if");
+      if (counter_2 < 6) {
+        let audio = document.createElement("audio");
+        audio.src = "/audiofile/pokeball_out.mp3";
+        // body.appendChild(audio);
+        audio.play();
+        pokeball_div.style.backgroundImage = "url('open_pokeball.png')";
+        img.style.visibility = "visible";
+        // console.log(num);
+        choosen_pokemons_id_2.push(num);
+        counter_2++;
+        // alert(counter_2);
+        // console.log("if");
+      }
       if (counter_2 == 6 && counter == 6) {
         alert("now you can click battle");
         localStorage.setItem(
@@ -172,13 +180,15 @@ const pokeball_formation_function2 = async (num) => {
   });
 };
 
-for (let i = 1; i < 20; i++) {
+const pokeball_checking_formation_2 = async () => {
+  for (let i = 1; i < 20; i++) {
   let num = Math.floor(Math.random() * 500);
   let response = await fetch(url + num + "/");
   let data = await response.json();
   if (data.forms[0].name) {
     pokeball_formation_function2(num);
+    }
   }
 }
-
+pokeball_checking_formation_2();
 // alert("This is workimng")

@@ -2,6 +2,8 @@ body {
   background-image: url("https://wallpapercave.com/wp/wp1902707.jpg");
   background-size: 100% 110%;
   background-repeat: no-repeat;
+  font-family: 'CustomFont';
+  src: url('/fonts/fonts.ttf') format('truetype');
 }
 audio {
   display: none;

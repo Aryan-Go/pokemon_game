@@ -13,14 +13,18 @@ body {
 audio {
   display: none;
 }
+
 .textarea {
-  background-color: antiquewhite;
+  background-color: #282828;
+  color: #F1F1EC;
   overflow: auto;
+  padding-top: 1rem;
   bottom: 1rem;
-  right: 13.5rem;
+  right: 19rem;
   height: 15%;
-  width: 75%;
+  width: 60%;
   position: absolute;
+  border-radius: 0.625rem;
 }
 div {
   cursor: pointer;

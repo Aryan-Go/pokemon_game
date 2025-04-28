@@ -2,6 +2,23 @@ let healthtext2 = document.createElement("div");
 let attackdiv2 = document.createElement("div");
 let buttonheavy2 = document.createElement("div");
 let buttonlight2 = document.createElement("div");
+
+const starting_function = async () => {
+  const load = document.querySelector(".loading_gif");
+  const main_body = document.getElementById("body");
+
+  main_body.style.display = "none";
+  load.style.display = "flex";
+
+  await pokeball_insertion();
+  await pokeball_formation_function();
+
+  setTimeout(() => {
+    main_body.style.display = "flex";
+    load.style.display = "none";
+  } , 1500)
+};
+
 class player {
   constructor(health, attack1, attack2, id) {
     this.health = health;
@@ -248,10 +265,11 @@ const pokeball_formation = async (num) => {
     }
   });
 };
-for (let i = 0; i < choosen_pokemons_id.length; i++) {
-  //   console.log(choosen_pokemons_id);
-  pokeball_formation(choosen_pokemons_id[i]);
-  // pokeball_formation.id = i;
+
+const pokeball_formation_function = async () => {
+  for (let i = 0; i < choosen_pokemons_id.length; i++) {
+    await pokeball_formation(choosen_pokemons_id[i]);
+  }
 }
 
 const pokeball_formation_2 = async (num) => {
@@ -469,4 +487,5 @@ const pokeball_insertion = async () => {
   }
 };
 
-pokeball_insertion();
+
+starting_function().then();

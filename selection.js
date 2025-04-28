@@ -9,17 +9,34 @@ let counter1 = 0;
 let counter2 = 0;
 let info_button = document.querySelector("#info");
 let infopage = document.querySelector(".infopage");
+let pokemon_reached = 0;
 // infopage.style.visibility = "visible";
+
+const starting_function = async () => {
+  const load = document.querySelector(".loading_gif");
+  const main_body = document.getElementById("body");
+
+  main_body.style.display = "none";
+  load.style.display = "flex";
+  
+  await pokeball_checking_formation();
+  await pokeball_checking_formation_2();
+
+  setTimeout(() => {
+    main_body.style.display = "block";
+    load.style.display = "none";
+  } , 1500)
+};
+
 info_button.addEventListener("click", () => {
   // alert("working");
   // alert(infopage.style.visibility);
   if (infopage.style.visibility === "visible") {
     infopage.style.visibility = "hidden";
-  }
-  else {
+  } else {
     infopage.style.visibility = "visible";
   }
-})
+});
 
 // let body = document.getElementById("body");
 let url = "https://pokeapi.co/api/v2/pokemon/";
@@ -95,23 +112,35 @@ if (battle_button) {
       alert("Please choose " + (6 - counter) + " more pokemons for player 1");
       alert("Please choose " + (6 - counter_2) + " more pokemons for player 2");
     } else {
-      window.location.href = "battle.html";
+      let choosen_pokemons_id = JSON.parse(
+        localStorage.getItem("choosen_pokemons_id")
+      );
+
+      let choosen_pokemons_id_2 = JSON.parse(
+        localStorage.getItem("choosen_pokemons_id_2")
+      );
+      if (choosen_pokemons_id && choosen_pokemons_id_2) {
+        window.location.href = "battle.html";
+      } else {
+        alert(
+          "Data not received by the website please refresh your site and choose pokemons once again"
+        );
+      }
     }
   });
 }
 
 const pokeball_checking_formation = async () => {
   for (let i = 1; i < 20; i++) {
-  let num = Math.floor(Math.random() * 500);
-  let response = await fetch(url + num + "/");
-  let data = await response.json();
-  if (data.forms[0].name) {
-    pokeball_formation_function(num);
+    let num = Math.floor(Math.random() * 500);
+    let response = await fetch(url + num + "/");
+    let data = await response.json();
+    if (data.forms[0].name) {
+      pokemon_reached++;
+      pokeball_formation_function(num);
     }
   }
-}
-pokeball_checking_formation();
-
+};
 
 const pokeball_formation_function2 = async (num) => {
   let pokeball_div = document.createElement("div");
@@ -182,13 +211,15 @@ const pokeball_formation_function2 = async (num) => {
 
 const pokeball_checking_formation_2 = async () => {
   for (let i = 1; i < 20; i++) {
-  let num = Math.floor(Math.random() * 500);
-  let response = await fetch(url + num + "/");
-  let data = await response.json();
-  if (data.forms[0].name) {
-    pokeball_formation_function2(num);
+    let num = Math.floor(Math.random() * 500);
+    let response = await fetch(url + num + "/");
+    let data = await response.json();
+    if (data.forms[0].name) {
+      pokemon_reached++;
+      pokeball_formation_function2(num);
     }
   }
-}
-pokeball_checking_formation_2();
+};
+
 // alert("This is workimng")
+starting_function().then();

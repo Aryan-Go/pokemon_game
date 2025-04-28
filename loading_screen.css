@@ -1,0 +1,23 @@
+body{
+    background-color: #ffff00;
+}
+.loading_gif{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    width: 100%;
+}
+.loading_bar{
+    margin-top: 3rem;
+    width: 50%;
+    background-color: rgb(2, 255, 116);
+    border-radius: 1rem;
+    border: black 0.2rem solid;
+    height: 2rem;
+    width: 0%;
+}
+.pokemon_running{
+    height: 20rem;
+}

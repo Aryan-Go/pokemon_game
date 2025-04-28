@@ -5,54 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Selection page</title>
     <link rel="stylesheet" href="selection.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="infopage">
-      <h1 class="info_title">Welcome trainer to the Pokemon game</h1>
-      <div class="align_text">
-        <div><img class="ash_gif" src="https://imgs.search.brave.com/YPxGrxFe6vihYN_LQNgNc_AQani77ar0Pxwro8lsf3U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS50ZW5vci5jb20v/NlRyU2VhcUJIalFB/QUFBTS9hc2gta2V0/Y2h1bS1wb2tlbW9u/LmdpZg.gif"/></div>
-        <div class="text">
-          <ul>
-            <li>Right from the birth we are fascinated by the show pokemon and we try to act like trainers who want to train their own pokemon and fight hard in this world to become the best pokemon trainer</li>
-            <li>This is the game where you will go on a journey where you will be selecting your pokemons and training them and then fighting with your enemny</li>
-            <li>Each player has to choose 6 pokemon and then fight with one another</li>
-            <li>The one with the maximum pokemons wins</li>
-          </ul>
-        </div>
+    <div class="loading_gif">
+      <img
+        src="https://imgs.search.brave.com/ZS1GPg1LzUbPyxgmE4vUlzSuBDRKLdqTTX_8DXi5jPM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9naWZk/Yi5jb20vaW1hZ2Vz/L2hpZ2gvcG9rZW1v/bi1kcm93emVlLWh5/cG5vdGl6aW5nLXRv/LXNsZWVwLWdqYWQy/MXpsbjY3encyaDYu/Z2lm.gif"
+      />
+      <div class="loading_bar">
+        <img src="./pokeballfile/loading_bgless.gif"/>
       </div>
-    </div>
-    <!-- <img src="" alt="pokemon backgr"/> -->
-    <!-- <h1>Choose your Pokemon</h1> -->
-    <audio
-      src="/audiofile/selection.mp3"
-      type="audio/mpeg"
-      autoplay
-      loop
-    ></audio>
-    <div class="title_button">
-      <div class="title_div">
-        <img
-          id="title"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pokémon_logo.svg/1200px-International_Pokémon_logo.svg.png"
-        />
-      </div>
-      <button type="submit" id="battle">
-        Lets battle
-      </button>
-      <button type="submit" id="info">
-      </button>
+      <img src="./pokeballfile/pikachu_run.gif" class="pokemon_running" />
     </div>
 
-    <div id="main">
+    <div id="body">
+      <div class="infopage">
+        <h1 class="info_title">Welcome trainer to the Pokemon game</h1>
+        <div class="align_text">
+          <div>
+            <img
+              class="ash_gif"
+              src="https://imgs.search.brave.com/YPxGrxFe6vihYN_LQNgNc_AQani77ar0Pxwro8lsf3U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS50ZW5vci5jb20v/NlRyU2VhcUJIalFB/QUFBTS9hc2gta2V0/Y2h1bS1wb2tlbW9u/LmdpZg.gif"
+            />
+          </div>
+          <div class="text">
+            <ul>
+              <li>
+                Right from the birth we are fascinated by the show pokemon and we
+                try to act like trainers who want to train their own pokemon and
+                fight hard in this world to become the best pokemon trainer
+              </li>
+              <li>
+                This is the game where you will go on a journey where you will be
+                selecting your pokemons and training them and then fighting with
+                your enemny
+              </li>
+              <li>
+                Each player has to choose 6 pokemon and then fight with one
+                another
+              </li>
+              <li>The one with the maximum pokemons wins</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- <img src="" alt="pokemon backgr"/> -->
+      <!-- <h1>Choose your Pokemon</h1> -->
+      <audio
+        src="/audiofile/selection.mp3"
+        type="audio/mpeg"
+        autoplay
+        loop
+      ></audio>
+      <div class="title_button">
+        <div class="title_div">
+          <img
+            id="title"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pokémon_logo.svg/1200px-International_Pokémon_logo.svg.png"
+          />
+        </div>
+        <button type="submit" id="battle">Lets battle</button>
+        <button type="submit" id="info"></button>
+      </div>
+
+      <div id="main">
         <div id="main1">
           <h1 class="playertext">Player 1</h1>
         </div>
         <div id="main2">
           <h1 class="playertext">Player 2</h1>
         </div>
+      </div>
     </div>
   </body>
   <script src="selection.js" type="module"></script>

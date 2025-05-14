@@ -1,13 +1,8 @@
 body{
   background-image: url("https://wallpapercave.com/wp/wp1902707.jpg");
+  background-size: 100% 100%;
 }
-.body {
-  
-  background-size: 100% 110%;
-  background-repeat: no-repeat;
-  font-family: 'Pixelify Sans' , sans-serif;
-  display:none;
-}
+
 audio {
   display: none;
 }
@@ -15,7 +10,7 @@ audio {
   width: 13rem;
   height: 3rem;
   border-radius: 1rem;
-  background-size: 100% 100%;
+  background-size: 100% 110%;
   color: red;
   font-size: 1.5rem;
   font-family: 'Pixelify Sans' , sans-serif
@@ -122,9 +117,9 @@ audio {
   position: absolute;
   width: 80%;
   height: 90%;
-  scale: 1.15;
+  scale: 1;
   background-color: rgb(101, 217, 38);
-  color: rgb(15, 119, 255);
+  color: rgb(255, 255, 255);
   border-radius: 5%;
  
 }
@@ -175,12 +170,8 @@ li{
     /* width: 100%; */
 }
 .loading_bar{
-    margin-top: 5rem;
+     margin-top: 5rem; 
     margin-bottom: 5rem;
-    /* width: 50%; */
-    margin-left: 30rem;
-    height: 2rem;
-    width: 100%;
 }
 .pokemon_running{
     height: 20rem;

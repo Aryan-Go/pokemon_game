@@ -49,8 +49,8 @@ const pokeball_formation_function = async (num) => {
   let img = document.createElement("img");
   img.style.visibility = "hidden";
   img.style.scale = "1.2";
-  img.style.height = "6.25rem";
-  img.style.width = "6.25rem";
+  img.style.height = "8.2rem";
+  img.style.width = "8.2rem";
   pokeball_div.appendChild(img);
   pokeball_div.appendChild(name);
   main_div_1.appendChild(pokeball_div);
@@ -149,8 +149,8 @@ const pokeball_formation_function2 = async (num) => {
   let img = document.createElement("img");
   img.style.visibility = "hidden";
   // img.style.scale = "1.2";
-  img.style.height = "6.25rem";
-  img.style.width = "6.25rem";
+  img.style.height = "8.2rem";
+  img.style.width = "8.2rem";
   pokeball_div.appendChild(img);
   pokeball_div.appendChild(name);
   main_div_2.appendChild(pokeball_div);

@@ -58,7 +58,6 @@ const pokeball_formation_function = async (num) => {
       if (counter < 6) {
         let audio = document.createElement("audio");
         audio.src = "/audiofile/pokeball_out.mp3";
-        // body.appendChild(audio);
         audio.play();
         document.querySelector("audio").play();
         pokeball_div.style.backgroundImage = "url('open_pokeball.png')";

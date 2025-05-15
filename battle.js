@@ -41,7 +41,6 @@ let b2 = 0;
 let body = document.querySelector("body");
 
 let textarea = document.querySelector(".textarea");
-// textarea.scrollIntoView();
 
 window.onload = () => {
   document.querySelector("audio").play();
@@ -65,14 +64,10 @@ let url = "https://pokeapi.co/api/v2/pokemon/";
 const pokeball_formation = async (num) => {
   let pokeball_div = document.createElement("div");
   pokeball_div.id = num;
-  // pokeball_div.style.marginBottom = "-20rem";
   
   let img = document.createElement("img");
   let name = document.createElement("p");
   name.classList.add("name");
-  
-  // name.style.marginTop = "1rem";
-  // name.style.margin = "auto";
   img.classList.add("img");
   img.style.visibility = "hidden";
   img.style.scale = "3";
@@ -179,7 +174,6 @@ const pokeball_formation = async (num) => {
               }
               player2.health = 0;
               counter2--;
-              // alert(counter1);
               setTimeout(() => {
                 while (p2.firstChild) {
                   p2.removeChild(p2.firstChild);

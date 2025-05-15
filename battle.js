@@ -67,17 +67,17 @@ const pokeball_formation = async (num) => {
   pokeball_div.style.display = "flex";
   pokeball_div.style.flexDirection = "column";
   pokeball_div.style.justifyContent = "center";
-  pokeball_div.style.scale = "0.7";
+  pokeball_div.style.scale = "1";
   // pokeball_div.style.margin = 0;
   pokeball_div.style.padding = 0;
   let img = document.createElement("img");
   let name = document.createElement("p");
   name.style.fontWeight = "bolder";
-  name.style.fontSize = "3rem";
+  name.style.fontSize = "2vh";
   // name.style.scale = "2"
   name.style.color = "red";
   // name.style.marginTop = "1rem";
-  name.style.margin = "auto";
+  // name.style.margin = "auto";
   img.style.visibility = "hidden";
   img.style.scale = "3";
   pokeball_div.appendChild(img);
@@ -306,7 +306,7 @@ const pokeball_formation_2 = async (num) => {
   let img = document.createElement("img");
   let name = document.createElement("p");
   name.style.fontWeight = "bolder";
-  name.style.fontSize = "3rem";
+  name.style.fontSize = "2.5vh";
   // name.style.scale = "2";
   name.style.color = "red";
   // name.style.marginTop = "1rem";

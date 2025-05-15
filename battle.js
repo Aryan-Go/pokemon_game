@@ -28,7 +28,7 @@ class player {
     this.id = id;
   }
 }
-let i = 0;
+
 let player1;
 let player2;
 let counter1 = 0;
@@ -63,19 +63,21 @@ let url = "https://pokeapi.co/api/v2/pokemon/";
 const pokeball_formation = async (num) => {
   let pokeball_div = document.createElement("div");
   pokeball_div.id = num;
-  pokeball_div.style.marginBottom = "-20rem";
+  // pokeball_div.style.marginBottom = "-20rem";
   pokeball_div.style.display = "flex";
   pokeball_div.style.flexDirection = "column";
   pokeball_div.style.justifyContent = "center";
-  pokeball_div.style.scale = "0.6";
-  pokeball_div.style.margin = 0;
+  pokeball_div.style.scale = "0.2";
+  // pokeball_div.style.margin = 0;
   pokeball_div.style.padding = 0;
   let img = document.createElement("img");
   let name = document.createElement("p");
   name.style.fontWeight = "bolder";
-  name.style.fontSize = "3rem";
+  name.style.fontSize = "10rem";
+  // name.style.scale = "2"
   name.style.color = "red";
-  name.style.marginTop = "1rem";
+  // name.style.marginTop = "1rem";
+  name.style.margin = "auto";
   img.style.visibility = "hidden";
   img.style.scale = "3";
   pokeball_div.appendChild(img);
@@ -95,8 +97,7 @@ const pokeball_formation = async (num) => {
         counter1++;
         img.src = data.sprites.other.showdown.front_shiny;
         img.style.marginBottom = "1.875rem";
-        pokeball_div.style.backgroundImage = "none";
-        name.style.visibility = "hidden"
+        pokeball_div.innerHTML = "";
         img.style.visibility = "visible";
         p1.appendChild(img);
         player1 = new player(
@@ -106,7 +107,7 @@ const pokeball_formation = async (num) => {
           data.moves[1].move.name,
           "htp1"
         );
-        p1.style.marginTop = "24rem";
+        p1.style.marginTop = "12rem";
         let reddiv = document.createElement("div");
         let healthtext = document.createElement("div");
         let attackdiv = document.createElement("div");
@@ -140,8 +141,8 @@ const pokeball_formation = async (num) => {
 
         healthtext.style.fontSize = "1.875rem";
         buttonheavy.style.backgroundColor = "#d35f56";
-        buttonheavy.innerHTML = player1.attack1;
-        buttonlight.innerHTML = player1.attack2;
+        buttonheavy.innerHTML = player1.attack2;
+        buttonlight.innerHTML = player1.attack1;
         buttonheavy.style.marginRight = "0.625rem";
         attackdiv.style.width = "20rem";
         attackdiv.style.height = "15rem";
@@ -166,6 +167,7 @@ const pokeball_formation = async (num) => {
           let u;
           let response_u;
           let data_u;
+          let i = 0;
           do {
             u = data.moves[i].move.url;
             console.log(u);
@@ -174,13 +176,14 @@ const pokeball_formation = async (num) => {
             i++;
           } while (!data_u.power);
           // i--;
+          player1.attack1 = data.moves[i].move.name;
           if (b1 == b2) {
             b1++;
             if (player2.health >= data_u.power * 0.1) {
               let text = document.createElement("p");
               text.innerHTML =
-                "Player 1 did " +
-                data.moves[0].move.name +
+                "Player 1 did " +player1.attack1
+                 +
                 " on player 2 which caused a damage of " +
                 data_u.power * 0.1 +
                 "\n";
@@ -221,21 +224,23 @@ const pokeball_formation = async (num) => {
           let u;
           let response_u;
           let data_u;
+          let i = 0;
           do {
-            player1.url = data.moves[i].move.url;
-            console.log(player1.url);
-            response_u = await fetch(player1.url);
+            u = data.moves[i].move.url;
+            console.log(u);
+            response_u = await fetch(u);
             data_u = await response_u.json();
             i++;
           } while (!data_u.power);
           // i--;
+          player1.attack2 = data.moves[i].move.name;
           if (b1 == b2) {
             b1++;
             if (player2.health >= data_u.power * 0.1) {
               let text = document.createElement("p");
               text.innerHTML =
-                "Player 1 did " +
-                data.moves[1].move.name +
+                "Player 1 did " +player1.attack2
+                 +
                 " on player 2 which caused a damage of " +
                 data_u.power * 0.1 +
                 "\n";
@@ -293,24 +298,25 @@ const pokeball_formation_function = async () => {
 const pokeball_formation_2 = async (num) => {
   let pokeball_div = document.createElement("div");
   pokeball_div.id = num;
+  // pokeball_div.style.marginBottom = "-20rem";
   pokeball_div.style.display = "flex";
   pokeball_div.style.flexDirection = "column";
   pokeball_div.style.justifyContent = "center";
-  pokeball_div.style.scale = "0.6";
-  pokeball_div.style.margin = 0;
-  pokeball_div.style.padding = 0;
-  //   let name = document.createElement("p");
+  pokeball_div.style.scale = "0.2";
+  // pokeball_div.style.margin = 0;
+  // pokeball_div.style.padding = 0;a
   let img = document.createElement("img");
   let name = document.createElement("p");
   name.style.fontWeight = "bolder";
+  name.style.fontSize = "10rem";
+  // name.style.scale = "2";
   name.style.color = "red";
-  name.style.fontSize = "3rem";
-  // name.style.padding = "10rem";
+  // name.style.marginTop = "1rem";
+  name.style.margin = "auto";
   img.style.visibility = "hidden";
   img.style.scale = "3";
   pokeball_div.appendChild(img);
   pokeball_div.appendChild(name);
-  //   pokeball_div.appendChild(name);
   player2_div.appendChild(pokeball_div);
   console.log(url + num + "/");
   let response = await fetch(url + num + "/");
@@ -330,12 +336,11 @@ const pokeball_formation_2 = async (num) => {
         counter2++;
         img.src = data.sprites.other.showdown.front_shiny;
         img.style.marginBottom = "1.875rem";
-        pokeball_div.style.backgroundImage = "none";
-        name.style.visibility = "hidden";
+        pokeball_div.innerHTML = "";
         img.style.visibility = "visible";
         // img.style.marginLeft = "35rem";
         // img.style.marginTop = "10rem";
-        p2.style.marginTop = "24rem";
+        p2.style.marginTop = "12rem";
         p2.appendChild(img);
         player2 = new player(
           data.stats[0].base_stat,
@@ -375,8 +380,8 @@ const pokeball_formation_2 = async (num) => {
         // healthtext.style.marginTop = "-100%";
         healthtext.style.fontSize = "1.875rem";
         buttonheavy.style.backgroundColor = "#d35f56";
-        buttonheavy.innerHTML = player2.attack1;
-        buttonlight.innerHTML = player2.attack2;
+        buttonheavy.innerHTML = player2.attack2;
+        buttonlight.innerHTML = player2.attack1;
         buttonheavy.style.marginRight = "0.625rem";
         buttonheavy.style.border = "white 0.2rem solid";
         buttonheavy.style.borderRadius = "1rem";
@@ -401,6 +406,7 @@ const pokeball_formation_2 = async (num) => {
           let u;
           let response_u;
           let data_u;
+          let i = 0;
           do {
             u = data.moves[i].move.url;
             console.log(u);
@@ -408,13 +414,14 @@ const pokeball_formation_2 = async (num) => {
             data_u = await response_u.json();
             i++;
           } while (!data_u.power);
+          player2.attack1 = data.moves[i].move.name;
           if (b2 < b1) {
             b2++;
             if (player1.health >= data_u.power * 0.1) {
               let text = document.createElement("p");
               text.innerHTML =
-                "Player 2 did " +
-                data.moves[0].move.name +
+                "Player 2 did " +player2.attack1
+                 +
                 " on player 1 which caused a damage of " +
                 data_u.power * 0.1 +
                 "\n";
@@ -454,6 +461,7 @@ const pokeball_formation_2 = async (num) => {
           let u;
           let response_u;
           let data_u;
+          let i = 0;
           do {
             u = data.moves[i].move.url;
             console.log(u);
@@ -461,6 +469,7 @@ const pokeball_formation_2 = async (num) => {
             data_u = await response_u.json();
             i++;
           } while (!data_u.power);
+          player2.attack2 = data.moves[i].move.name;
           if (b2 < b1) {
             b2++;
             if (player1.health >= data_u.power * 0.1) {
@@ -468,9 +477,9 @@ const pokeball_formation_2 = async (num) => {
               // p.id = "heyyyy"
               // text.style.color = "red";
               text.innerHTML =
-                "Player 1 did " +
-                data.moves[1].move.name +
-                " on player 2 which caused a damage of " +
+                "Player 2 did " +player2.attack2
+                 +
+                " on player 1 which caused a damage of " +
                 data_u.power * 0.1 +
                 "\n";
               text.style.fontSize = "1.875rem";

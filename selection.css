@@ -43,7 +43,7 @@ audio {
   flex-direction: row;
   flex-wrap: wrap;
   width: 45%;
-  margin-right:6rem;
+  margin-right:5.5rem;
 }
 #main2 {
   display: flex;

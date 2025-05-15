@@ -106,15 +106,14 @@ div {
   background-position: center;
   height: 10vh;
   width: auto;
-  /* padding-bottom: -20rem; */
-  /* padding-top: -20rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* align-items: center; */
-  /* padding-bottom: 1rem; */
+  scale : 1;
+  margin : 0;
+  padding : 0;
 }
 .player1 div p{
   position:absolute;
@@ -129,15 +128,14 @@ div {
   background-position: center;
   height: 10vh;
   width: auto;
-  /* padding-bottom: -20rem; */
-  /* padding-top: -20rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* align-items: center; */
-  /* padding-bottom: 1rem; */
+  scale : 1;
+  margin : 0;
+  padding : 0;
 }
 
 .player2 div p{
@@ -172,4 +170,57 @@ div {
 }
 .pokemon_running{
     height: 20rem;
+}
+
+.reddiv{
+  width : 10rem;
+  margin-top : -2.2rem;
+  z-index : -1;
+  height : 2rem;
+  background-color : red;
+  border : white 0.2rem solid;
+  border-radius : 1rem;
+}
+
+.healthtextp{
+background-color : #86a93c;
+border : white 0.2rem solid;
+border-radius : 1rem;
+padding : 1rem;
+}
+
+.healthtext{
+margin-top : 5rem;
+background-color : green;
+height : 2rem;
+border-radius : 1rem;
+font-size : 1.875rem;
+}
+
+.buttonheavy{
+background-color : #d35f56;
+margin-right : 0.625rem;
+width : 10rem;
+height : 2.5rem;
+border : white 0.2rem solid;
+border-radius : 1rem;
+}
+
+.attackdiv{
+width : 20rem;
+height : 15rem;
+display :flex;
+flex-direction : row;
+justify-content : space-around;
+margin-top : 0.625rem;
+}
+
+.buttonlight{
+border : white 0.2rem solid;
+border-radius : 1rem;
+background-color : #e2e1d9;
+width : 10rem;
+font-size : 1.25rem;
+font-size : 1.25rem;
+height : 2.5rem;
 }

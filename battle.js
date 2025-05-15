@@ -66,12 +66,7 @@ const pokeball_formation = async (num) => {
   let pokeball_div = document.createElement("div");
   pokeball_div.id = num;
   // pokeball_div.style.marginBottom = "-20rem";
-  pokeball_div.style.display = "flex";
-  pokeball_div.style.flexDirection = "column";
-  pokeball_div.style.justifyContent = "center";
-  pokeball_div.style.scale = "1";
-  // pokeball_div.style.margin = 0;
-  pokeball_div.style.padding = 0;
+  
   let img = document.createElement("img");
   let name = document.createElement("p");
   name.style.fontWeight = "bolder";
@@ -117,54 +112,33 @@ const pokeball_formation = async (num) => {
         let buttonlight = document.createElement("div");
         let healthtextp = document.createElement("p");
 
-        reddiv.style.width = "10rem";
-        reddiv.style.marginTop = "-2.2rem"
-        reddiv.style.zIndex = -1;
-        reddiv.style.height = "2rem";
-        reddiv.style.backgroundColor = "red";
-        reddiv.style.border = "white 0.2rem solid";
-        reddiv.style.borderRadius = "1rem";
         
-        healthtextp.innerHTML = "Health" + player1.health;
+        reddiv.classList.add("reddiv");
+        
+        healthtextp.classList.add("healthtextp");
         healthtextp.id = "health1";
-        healthtextp.style.backgroundColor = "#86a93c";
-        healthtextp.style.border = "white 0.2rem solid";
-        healthtextp.style.borderRadius = "1rem";
-        healthtextp.style.padding = "1rem";
+          healthtextp.innerHTML = "Health" + player1.health;
 
         healthtext.id = player1.id;
-        healthtext.style.marginTop = "5rem";
-        healthtext.style.backgroundColor = "green";
-        healthtext.style.height = "2rem";
+        healthtext.classList.add("healthtext");
+        
         healthtext.style.width = (player1.health / data.stats[0].base_stat)*10 + "rem";
-        healthtext.style.borderRadius = "1rem";
+        
         
         // healthtext.innerHTML = "Health" + player1.health;
 
-        healthtext.style.fontSize = "1.875rem";
-        buttonheavy.style.backgroundColor = "#d35f56";
+        buttonheavy.classList.add("buttonheavy");
+        
         buttonheavy.innerHTML = player1.attack1;
         buttonlight.innerHTML = player1.attack2;
-        buttonheavy.style.marginRight = "0.625rem";
-        attackdiv.style.width = "20rem";
-        attackdiv.style.height = "15rem";
-        buttonheavy.style.width = "10rem";
-        buttonheavy.style.height = "2.5rem";
-        buttonheavy.style.border = "white 0.2rem solid";
-        buttonheavy.style.borderRadius = "1rem";
-        buttonlight.style.border = "white 0.2rem solid";
-        buttonlight.style.borderRadius = "1rem";
-        buttonlight.style.backgroundColor = "#e2e1d9";
-        buttonlight.style.width = "10rem";
-        buttonlight.style.fontSize = "1.25rem";
-        buttonheavy.style.fontSize = "1.25rem";
-        buttonlight.style.height = "2.5rem";
+        
+        attackdiv.classList.add("attackdiv");
+        
+        buttonlight.classList.add("buttonlight");
+        
         attackdiv.appendChild(buttonheavy);
         attackdiv.appendChild(buttonlight);
-        attackdiv.style.display = "flex";
-        attackdiv.style.flexDirection = "row";
-        attackdiv.style.justifyContent = "space-around";
-        attackdiv.style.marginTop = "0.625rem";
+        
         let i = 0;
         buttonheavy.addEventListener("click", async () => {
           let u;
@@ -204,6 +178,14 @@ const pokeball_formation = async (num) => {
               alert(
                 "Player 1 wins. Wait for 3 sec for the pokemon to be removed and then select your new pokemon"
               );
+              if (total_balls_player1 == 0 || total_balls_player2 == 0) {
+                alert(
+                  "Wait for 3 seconds while you are being redirected to the home page"
+                );
+                setTimeout(() => {
+                  window.location.href = "index.html";
+                }, 3000);
+              }
               player2.health = 0;
               counter2--;
               // alert(counter1);
@@ -257,6 +239,14 @@ const pokeball_formation = async (num) => {
               alert(
                 "Player 1 wins. Wait for 3 sec for the pokemon to be removed and then select your new pokemon"
               );
+              if (total_balls_player1 == 0 || total_balls_player2 == 0) {
+                alert(
+                  "Wait for 3 seconds while you are being redirected to the home page"
+                );
+                setTimeout(() => {
+                  window.location.href = "index.html";
+                }, 3000);
+              }
               player2.health = 0;
               counter2--;
               // alert(counter1);
@@ -294,11 +284,6 @@ const pokeball_formation_function = async () => {
 const pokeball_formation_2 = async (num) => {
   let pokeball_div = document.createElement("div");
   pokeball_div.id = num;
-  // pokeball_div.style.marginBottom = "-20rem";
-  pokeball_div.style.display = "flex";
-  pokeball_div.style.flexDirection = "column";
-  pokeball_div.style.justifyContent = "center";
-  pokeball_div.style.scale = "0.7";
   // pokeball_div.style.margin = 0;
   // pokeball_div.style.padding = 0;a
   let img = document.createElement("img");
@@ -352,52 +337,28 @@ const pokeball_formation_2 = async (num) => {
         let buttonlight = document.createElement("div");
         let healthtextp = document.createElement("p");
 
-        reddiv.style.width = "10rem";
-        reddiv.style.marginTop = "-2.2rem";
-        reddiv.style.zIndex = -1;
-        reddiv.style.height = "2rem";
-        reddiv.style.backgroundColor = "red";
-        reddiv.style.border = "white 0.2rem solid"
-        reddiv.style.borderRadius = "1rem"
+        reddiv.classList.add("reddiv");
         
         healthtextp.innerHTML = "Health" + player2.health;
         healthtextp.id = "health2";
-        healthtextp.style.backgroundColor = "#86a93c";
-        healthtextp.style.border = "white 0.2rem solid";
-        healthtextp.style.borderRadius = "1rem";
-        healthtextp.style.padding = "1rem";
+        healthtextp.classList.add("healthtextp");
+
         healthtext.id = player2.id;
-        healthtext.style.marginTop = "5rem";
-        healthtext.style.backgroundColor = "green";
-        healthtext.style.height = "2rem";
+        healthtext.classList.add("healthtext");
         healthtext.style.width =
           (player2.health / data.stats[0].base_stat) * 10 + "rem";
-        healthtext.style.borderRadius = "1rem"
-        // healthtext.style.marginTop = "-100%";
-        healthtext.style.fontSize = "1.875rem";
-        buttonheavy.style.backgroundColor = "#d35f56";
+        
+        buttonheavy.classList.add("buttonheavy");
         buttonheavy.innerHTML = player2.attack1;
         buttonlight.innerHTML = player2.attack2;
-        buttonheavy.style.marginRight = "0.625rem";
-        buttonheavy.style.border = "white 0.2rem solid";
-        buttonheavy.style.borderRadius = "1rem";
-        buttonlight.style.border = "white 0.2rem solid";
-        buttonlight.style.borderRadius = "1rem";
-        attackdiv.style.width = "20rem";
-        attackdiv.style.height = "15rem";
-        buttonheavy.style.width = "10rem";
-        buttonheavy.style.height = "2.5rem";
-        buttonlight.style.backgroundColor = "	#e2e1d9";
-        buttonlight.style.width = "10rem";
-        buttonlight.style.fontSize = "1.25rem";
-        buttonheavy.style.fontSize = "1.25rem";
-        buttonlight.style.height = "2.5rem";
+        
+        buttonlight.classList.add("buttonlight");
+        
+        attackdiv.classList.add("attackdiv");
+        
         attackdiv.appendChild(buttonheavy);
         attackdiv.appendChild(buttonlight);
-        attackdiv.style.display = "flex";
-        attackdiv.style.flexDirection = "row";
-        attackdiv.style.justifyContent = "space-around";
-        attackdiv.style.marginTop = "0.625rem";
+        
         let i = 0;
         buttonheavy.addEventListener("click", async () => {
           let u;
@@ -432,11 +393,20 @@ const pokeball_formation_2 = async (num) => {
               let hp1 = p1.querySelector("#health1");
               hp1.innerHTML = "Health = " + player1.health;
             } else {
+              
               // alert("in");
               player1.health = 0;
               counter1--;
               // alert(counter1);
               alert("Player 2 wins. Wait for 3 sec for the pokemon to be removed and then select your new pokemon");
+              if (total_balls_player1 == 0 || total_balls_player2 == 0) {
+                alert(
+                  "Wait for 3 seconds while you are being redirected to the home page"
+                );
+                setTimeout(() => {
+                  window.location.href = "index.html";
+                }, 3000);
+              }
               setTimeout(() => {
                 while (p1.firstChild) {
                   p1.removeChild(p1.firstChild);
@@ -447,6 +417,8 @@ const pokeball_formation_2 = async (num) => {
           }
 
           let ht1 = p1.querySelector("#htp1");
+          ht1.style.width =
+            (player1.health / player1.const_health) * 10 + "rem";
           // text1 = "Health" + player1.health;
         });
         buttonlight.addEventListener("click", async () => {
@@ -484,12 +456,19 @@ const pokeball_formation_2 = async (num) => {
               let hp1 = p1.querySelector("#health1");
               hp1.innerHTML = "Health = " + player1.health;
             } else {
+              
               player1.health = 0;
               counter1--;
               // alert(counter1);
               alert(
                 "Player 2 wins. Wait for 3 sec for the pokemon to be removed and then select your new pokemon"
               );
+              if (total_balls_player1 == 0 || total_balls_player2 == 0) {
+                alert("Wait for 3 seconds while you are being redirected to the home page");
+                setTimeout(() => {
+                  window.location.href = "index.html";
+                }, 3000);
+              }
               setTimeout(() => {
                 while (p1.firstChild) {
                   p1.removeChild(p1.firstChild);
@@ -524,8 +503,6 @@ const pokeball_insertion = async () => {
     // pokeball_formation.id = i;
   }
 };
-if (total_balls_player1 == 0 || total_balls_player2 == 0) {
-  window.location.href = "index.html";
-}
+
 
 starting_function().then();

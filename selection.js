@@ -135,7 +135,11 @@ const pokeball_checking_formation = async () => {
     let num = Math.floor(Math.random() * 500);
     let response = await fetch(url + num + "/");
     let data = await response.json();
-    if (data.forms[0].name) {
+    let u = data.moves[0].move.url;
+    console.log(u);
+    let response_u = await fetch(u);
+    let data_u = await response_u.json();
+    if (data.forms[0].name && data_u.power!=0) {
       pokemon_reached++;
       pokeball_formation_function(num);
     }
@@ -214,7 +218,11 @@ const pokeball_checking_formation_2 = async () => {
     let num = Math.floor(Math.random() * 500);
     let response = await fetch(url + num + "/");
     let data = await response.json();
-    if (data.forms[0].name) {
+    let u = data.moves[0].move.url;
+    console.log(u);
+    let response_u = await fetch(u);
+    let data_u = await response_u.json();
+    if (data.forms[0].name && data_u.power != 0) {
       pokemon_reached++;
       pokeball_formation_function2(num);
     }

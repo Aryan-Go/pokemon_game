@@ -34,6 +34,7 @@ audio {
   width: 60%;
   position: absolute;
   margin: auto;
+  margin-bottom: 10rem;
   border-radius: 0.625rem;
 }
 div {
@@ -49,6 +50,7 @@ div {
   /* height: 0%; */
 }
 .main_ground {
+  margin-top: 10rem;
   display: flex;
   flex-direction: row;
   text-align: center;

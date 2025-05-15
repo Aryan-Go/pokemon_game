@@ -168,14 +168,10 @@ const pokeball_formation = async (num) => {
           let u;
           let response_u;
           let data_u;
-          
-          do {
-            u = data.moves[i].move.url;
+            u = data.moves[0].move.url;
             console.log(u);
             response_u = await fetch(u);
             data_u = await response_u.json();
-            i++;
-          } while (!data_u.power);
           // i--;
           // player1.attack1 = data.moves[i].move.name;
           if (b1 == b2) {
@@ -225,13 +221,10 @@ const pokeball_formation = async (num) => {
           let u;
           let response_u;
           let data_u;
-          do {
-            u = data.moves[i].move.url;
+            u = data.moves[1].move.url;
             console.log(u);
             response_u = await fetch(u);
             data_u = await response_u.json();
-            i++;
-          } while (!data_u.power);
           // i--;
           // player1.attack2 = data.moves[i].move.name;
           if (b1 == b2) {
@@ -407,14 +400,10 @@ const pokeball_formation_2 = async (num) => {
           let u;
           let response_u;
           let data_u;
-          
-          do {
-            u = data.moves[i].move.url;
+            u = data.moves[0].move.url;
             console.log(u);
             response_u = await fetch(u);
             data_u = await response_u.json();
-            i++;
-          } while (!data_u.power);
           // player2.attack1 = data.moves[i].move.name;
           if (b2 < b1) {
             b2++;
@@ -462,14 +451,10 @@ const pokeball_formation_2 = async (num) => {
           let u;
           let response_u;
           let data_u;
-          // let i = 0;
-          do {
-            u = data.moves[i].move.url;
+            u = data.moves[1].move.url;
             console.log(u);
             response_u = await fetch(u);
             data_u = await response_u.json();
-            i++;
-          } while (!data_u.power);
           // player2.attack2 = data.moves[i].move.name;
           if (b2 < b1) {
             b2++;

@@ -67,13 +67,13 @@ const pokeball_formation = async (num) => {
   pokeball_div.style.display = "flex";
   pokeball_div.style.flexDirection = "column";
   pokeball_div.style.justifyContent = "center";
-  pokeball_div.style.scale = "0.2";
+  pokeball_div.style.scale = "0.8";
   // pokeball_div.style.margin = 0;
   pokeball_div.style.padding = 0;
   let img = document.createElement("img");
   let name = document.createElement("p");
   name.style.fontWeight = "bolder";
-  name.style.fontSize = "10rem";
+  name.style.fontSize = "3rem";
   // name.style.scale = "2"
   name.style.color = "red";
   // name.style.marginTop = "1rem";
@@ -163,11 +163,12 @@ const pokeball_formation = async (num) => {
         attackdiv.style.flexDirection = "row";
         attackdiv.style.justifyContent = "space-around";
         attackdiv.style.marginTop = "0.625rem";
+        let i = 0;
         buttonheavy.addEventListener("click", async () => {
           let u;
           let response_u;
           let data_u;
-          let i = 0;
+          
           do {
             u = data.moves[i].move.url;
             console.log(u);
@@ -224,7 +225,6 @@ const pokeball_formation = async (num) => {
           let u;
           let response_u;
           let data_u;
-          let i = 0;
           do {
             u = data.moves[i].move.url;
             console.log(u);
@@ -302,13 +302,13 @@ const pokeball_formation_2 = async (num) => {
   pokeball_div.style.display = "flex";
   pokeball_div.style.flexDirection = "column";
   pokeball_div.style.justifyContent = "center";
-  pokeball_div.style.scale = "0.2";
+  pokeball_div.style.scale = "0.8";
   // pokeball_div.style.margin = 0;
   // pokeball_div.style.padding = 0;a
   let img = document.createElement("img");
   let name = document.createElement("p");
   name.style.fontWeight = "bolder";
-  name.style.fontSize = "10rem";
+  name.style.fontSize = "3rem";
   // name.style.scale = "2";
   name.style.color = "red";
   // name.style.marginTop = "1rem";
@@ -402,11 +402,12 @@ const pokeball_formation_2 = async (num) => {
         attackdiv.style.flexDirection = "row";
         attackdiv.style.justifyContent = "space-around";
         attackdiv.style.marginTop = "0.625rem";
+        let i = 0;
         buttonheavy.addEventListener("click", async () => {
           let u;
           let response_u;
           let data_u;
-          let i = 0;
+          
           do {
             u = data.moves[i].move.url;
             console.log(u);
@@ -461,7 +462,7 @@ const pokeball_formation_2 = async (num) => {
           let u;
           let response_u;
           let data_u;
-          let i = 0;
+          // let i = 0;
           do {
             u = data.moves[i].move.url;
             console.log(u);

@@ -1,6 +1,6 @@
 body{
       background-image: url("/pokeballfile/battle_ground.png");
-      background-size: 100% 105%;
+      background-size: 100% 106%;
       background-repeat: no-repeat;
       /* overflow: auto; */
       overflow-x: hidden;
@@ -92,7 +92,7 @@ div {
   flex-direction: column;
   justify-content: center;
   /* align-items: center; */
-  margin: -20rem;
+  /* margin: -20rem; */
 }
 
 .player2 div {
@@ -105,7 +105,7 @@ div {
   flex-direction: column;
   justify-content: center;
   /* align-items: center; */
-  margin: -20rem;
+  /* margin: -20rem; */
 }
 
 

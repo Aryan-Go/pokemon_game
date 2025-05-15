@@ -1,6 +1,6 @@
 body{
       background-image: url("/pokeballfile/battle_ground.png");
-      background-size: 100% 115%;
+      background-size: 100vw 100vh;
       background-repeat: no-repeat;
       /* overflow: auto; */
       overflow-x: hidden;
@@ -12,9 +12,9 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   font-family: 'Pixelify Sans' , sans-serif;
-  display:none;
+  /* display:none; */
   /* overflow-x: hidden; */
 }
 audio {
@@ -44,8 +44,10 @@ div {
   width: 15%;
   display: flex;
   flex-direction: column;
-  align-items: space-around; 
-  justify-content: center;
+  align-items: space-around;
+  justify-content: space-around;
+  row-gap: 2vh;
+  height: 90vh;
   /* gap: 0; */
   /* height: 0%; */
 }
@@ -62,10 +64,11 @@ div {
   width: 15%;
   display: flex;
   flex-direction: column;
-  align-items: space-around; 
-  justify-content: center;
+  align-items: space-around;
+  justify-content: space-around;
+  row-gap: 2vh;
+  height: 90vh;
   /* gap: 0; */
-  /* padding-left: 10rem; */
   /* height: 0%; */
 }
 
@@ -85,32 +88,52 @@ div {
 }
 
 .player1 div {
+  position:relative;
   background-image: url("/pokeballfile/closed_pokeball.png");
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: center;
+  height: 10vh;
+  width: auto;
   /* padding-bottom: -20rem; */
   /* padding-top: -20rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   /* align-items: center; */
   /* padding-bottom: 1rem; */
 }
-
+.player1 div p{
+  position:absolute;
+  top:100%;
+  
+}
 .player2 div {
+  position:relative;
   background-image: url("/pokeballfile/closed_pokeball.png");
   background-repeat: no-repeat;
   background-size: contain;
-  padding-bottom: -20rem;
+  background-position: center;
+  height: 10vh;
+  width: auto;
+  /* padding-bottom: -20rem; */
   /* padding-top: -20rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   /* align-items: center; */
-  /* margin: -20rem; */
+  /* padding-bottom: 1rem; */
 }
 
-
+.player2 div p{
+  position:absolute;
+  top:100%;
+  
+}
 
 .loading_gif{
     /* display:block; */

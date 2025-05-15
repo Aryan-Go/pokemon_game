@@ -97,7 +97,7 @@ const pokeball_formation = async (num) => {
         counter1++;
         img.src = data.sprites.other.showdown.front_shiny;
         img.style.marginBottom = "1.875rem";
-        pokeball_div.innerHTML = "";
+        pokeball_div.remove();
         img.style.visibility = "visible";
         p1.appendChild(img);
         player1 = new player(
@@ -334,7 +334,7 @@ const pokeball_formation_2 = async (num) => {
         counter2++;
         img.src = data.sprites.other.showdown.front_shiny;
         img.style.marginBottom = "1.875rem";
-        pokeball_div.innerHTML = "";
+        pokeball_div.remove();
         img.style.visibility = "visible";
         // img.style.marginLeft = "35rem";
         // img.style.marginTop = "10rem";

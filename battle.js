@@ -67,7 +67,7 @@ const pokeball_formation = async (num) => {
   pokeball_div.style.display = "flex";
   pokeball_div.style.flexDirection = "column";
   pokeball_div.style.justifyContent = "center";
-  pokeball_div.style.scale = "0.8";
+  pokeball_div.style.scale = "0.7";
   // pokeball_div.style.margin = 0;
   pokeball_div.style.padding = 0;
   let img = document.createElement("img");
@@ -300,7 +300,7 @@ const pokeball_formation_2 = async (num) => {
   pokeball_div.style.display = "flex";
   pokeball_div.style.flexDirection = "column";
   pokeball_div.style.justifyContent = "center";
-  pokeball_div.style.scale = "0.8";
+  pokeball_div.style.scale = "0.7";
   // pokeball_div.style.margin = 0;
   // pokeball_div.style.padding = 0;a
   let img = document.createElement("img");

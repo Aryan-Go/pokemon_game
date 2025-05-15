@@ -109,6 +109,7 @@ const pokeball_formation = async (num) => {
         
         reddiv.classList.add("reddiv");
         
+
         healthtextp.classList.add("healthtextp");
         healthtextp.id = "health1";
           healthtextp.innerHTML = "Health" + player1.health;
@@ -241,7 +242,7 @@ const pokeball_formation = async (num) => {
           let hp2 = p2.querySelector("#health2");
           hp2.innerHTML = "Health = " + player2.health;
         });
-        p1.appendChild(healthtext);
+        reddiv.appendChild(healthtext);
         p1.appendChild(reddiv);
         p1.appendChild(healthtextp);
         p1.appendChild(attackdiv);
@@ -441,7 +442,7 @@ const pokeball_formation_2 = async (num) => {
           let hp1 = p1.querySelector("#health1");
           hp1.innerHTML = "Health = " + player1.health;
         });
-        p2.appendChild(healthtext);
+        reddiv.appendChild(healthtext);
         p2.appendChild(reddiv);
         p2.appendChild(healthtextp);
         p2.appendChild(attackdiv);

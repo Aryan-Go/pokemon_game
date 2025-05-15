@@ -69,12 +69,11 @@ const pokeball_formation = async (num) => {
   
   let img = document.createElement("img");
   let name = document.createElement("p");
-  name.style.fontWeight = "bolder";
-  name.style.fontSize = "2vh";
-  // name.style.scale = "2"
-  name.style.color = "red";
+  name.classList.add("name");
+  
   // name.style.marginTop = "1rem";
   // name.style.margin = "auto";
+  img.classList.add("img");
   img.style.visibility = "hidden";
   img.style.scale = "3";
   pokeball_div.appendChild(img);
@@ -104,7 +103,7 @@ const pokeball_formation = async (num) => {
           data.moves[1].move.name,
           "htp1"
         );
-        p1.style.marginTop = "12rem";
+        
         let reddiv = document.createElement("div");
         let healthtext = document.createElement("div");
         let attackdiv = document.createElement("div");
@@ -153,13 +152,14 @@ const pokeball_formation = async (num) => {
             b1++;
             if (player2.health >= data_u.power * 0.1) {
               let text = document.createElement("p");
+              text.classList.add("text");
               text.innerHTML =
                 "Player 1 did " +player1.attack1
                  +
                 " on player 2 which caused a damage of " +
                 data_u.power * 0.1 +
                 "\n";
-              text.style.fontSize = "1.875rem";
+              
               // text.style.color = "blue";
               textarea.appendChild(text);
               textarea.scrollTop = textarea.scrollHeight;
@@ -214,13 +214,13 @@ const pokeball_formation = async (num) => {
             b1++;
             if (player2.health >= data_u.power * 0.1) {
               let text = document.createElement("p");
+              text.classList.add("text");
               text.innerHTML =
                 "Player 1 did " +player1.attack2
                  +
                 " on player 2 which caused a damage of " +
                 data_u.power * 0.1 +
                 "\n";
-              text.style.fontSize = "1.875rem";
               // text.style.color = "blue";
               textarea.appendChild(text);
               textarea.scrollTop = textarea.scrollHeight;
@@ -288,12 +288,7 @@ const pokeball_formation_2 = async (num) => {
   // pokeball_div.style.padding = 0;a
   let img = document.createElement("img");
   let name = document.createElement("p");
-  name.style.fontWeight = "bolder";
-  name.style.fontSize = "2.5vh";
-  // name.style.scale = "2";
-  name.style.color = "red";
-  // name.style.marginTop = "1rem";
-  name.style.margin = "auto";
+  name.classList.add("name");
   img.style.visibility = "hidden";
   img.style.scale = "3";
   pokeball_div.appendChild(img);
@@ -321,7 +316,7 @@ const pokeball_formation_2 = async (num) => {
         img.style.visibility = "visible";
         // img.style.marginLeft = "35rem";
         // img.style.marginTop = "10rem";
-        p2.style.marginTop = "12rem";
+        
         p2.appendChild(img);
         player2 = new player(
           data.stats[0].base_stat,
@@ -372,13 +367,13 @@ const pokeball_formation_2 = async (num) => {
             b2++;
             if (player1.health >= data_u.power * 0.1) {
               let text = document.createElement("p");
+              text.classList.add("text");
               text.innerHTML =
                 "Player 2 did " +player2.attack1
                  +
                 " on player 1 which caused a damage of " +
                 data_u.power * 0.1 +
                 "\n";
-              text.style.fontSize = "1.875rem";
               // text.style.color = "red";
               textarea.appendChild(text);
               textarea.scrollTop = textarea.scrollHeight;
@@ -433,6 +428,7 @@ const pokeball_formation_2 = async (num) => {
             b2++;
             if (player1.health >= data_u.power * 0.1) {
               let text = document.createElement("p");
+              text.classList.add("text");
               // p.id = "heyyyy"
               // text.style.color = "red";
               text.innerHTML =
@@ -441,7 +437,6 @@ const pokeball_formation_2 = async (num) => {
                 " on player 1 which caused a damage of " +
                 data_u.power * 0.1 +
                 "\n";
-              text.style.fontSize = "1.875rem";
               textarea.appendChild(text);
               textarea.scrollTop = textarea.scrollHeight;
 

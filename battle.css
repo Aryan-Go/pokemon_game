@@ -80,6 +80,7 @@ div {
   align-items: center;
   padding: 0;
   height: 70vh;
+  margin-top : 12rem;
   /* padding-top: -200rem; */
 }
 .p1 img{
@@ -92,6 +93,7 @@ div {
   align-items: center;
   padding: 0;
   height: 70vh;
+  margin-top : 12rem;
 }
 
 .p2 img{
@@ -223,4 +225,21 @@ width : 10rem;
 font-size : 1.25rem;
 font-size : 1.25rem;
 height : 2.5rem;
+}
+
+.name{
+font-weight : bolder;
+font-size : 2vh;
+/* scale : 2; */
+color : red;
+}
+
+.img{
+visibility : hidden;
+scale :3;
+/* margin : auto; */
+}
+
+.text{
+  font-size : 1.875rem;
 }

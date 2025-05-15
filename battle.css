@@ -4,6 +4,7 @@ body{
       background-repeat: no-repeat;
       /* overflow: auto; */
       overflow-x: hidden;
+      overflow-y: hidden;
 }
 
 #body {

@@ -10,7 +10,6 @@ let counter2 = 0;
 let info_button = document.querySelector("#info");
 let infopage = document.querySelector(".infopage");
 let pokemon_reached = 0;
-// infopage.style.visibility = "visible";
 
 const starting_function = async () => {
   const load = document.querySelector(".loading_gif");
@@ -29,16 +28,12 @@ const starting_function = async () => {
 };
 
 info_button.addEventListener("click", () => {
-  // alert("working");
-  // alert(infopage.style.visibility);
   if (infopage.style.visibility === "visible") {
     infopage.style.visibility = "hidden";
   } else {
     infopage.style.visibility = "visible";
   }
 });
-
-// let body = document.getElementById("body");
 let url = "https://pokeapi.co/api/v2/pokemon/";
 const pokeball_formation_function = async (num) => {
   let pokeball_div = document.createElement("div");
@@ -94,7 +89,6 @@ const pokeball_formation_function = async (num) => {
       }
     } else {
       choosen_pokemons_id.pop();
-      // random_computer_pokemons.pop();
       counter--;
       pokeball_div.style.backgroundImage =
         "url('/pokeballfile/closed_pokeball.png')";
@@ -147,7 +141,6 @@ const pokeball_formation_function2 = async (num) => {
   let name = document.createElement("p");
   let img = document.createElement("img");
   img.style.visibility = "hidden";
-  // img.style.scale = "1.2";
   img.style.height = "8.2rem";
   img.style.width = "8.2rem";
   pokeball_div.appendChild(img);
@@ -164,7 +157,6 @@ const pokeball_formation_function2 = async (num) => {
       if (counter_2 < 6) {
         let audio = document.createElement("audio");
         audio.src = "/audiofile/pokeball_out.mp3";
-        // body.appendChild(audio);
         audio.play();
         pokeball_div.style.backgroundImage = "url('open_pokeball.png')";
         img.style.visibility = "visible";
@@ -194,7 +186,6 @@ const pokeball_formation_function2 = async (num) => {
       }
     } else {
       choosen_pokemons_id_2.pop();
-      // random_computer_pokemons.pop();
       counter_2--;
       pokeball_div.style.backgroundImage =
         "url('/pokeballfile/closed_pokeball.png')";
@@ -217,6 +208,4 @@ const pokeball_checking_formation_2 = async () => {
     }
   }
 };
-
-// alert("This is workimng")
 starting_function().then();

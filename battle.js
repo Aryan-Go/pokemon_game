@@ -122,9 +122,6 @@ const pokeball_formation = async (num) => {
         healthtext.classList.add("healthtext");
         
         healthtext.style.width = (player1.health / data.stats[0].base_stat)*10 + "rem";
-        
-        
-        // healthtext.innerHTML = "Health" + player1.health;
 
         buttonheavy.classList.add("buttonheavy");
         
@@ -146,8 +143,6 @@ const pokeball_formation = async (num) => {
             u = data.moves[0].move.url;
             response_u = await fetch(u);
             data_u = await response_u.json();
-          // i--;
-          // player1.attack1 = data.moves[i].move.name;
           if (b1 == b2) {
             b1++;
             if (player2.health >= data_u.power * 0.1) {
@@ -159,13 +154,10 @@ const pokeball_formation = async (num) => {
                 " on player 2 which caused a damage of " +
                 data_u.power * 0.1 +
                 "\n";
-              
-              // text.style.color = "blue";
               textarea.appendChild(text);
               textarea.scrollTop = textarea.scrollHeight;
               let audio = document.createElement("audio");
               audio.src = "/audiofile/punch.mp3";
-              // body.appendChild(audio);
               audio.play();
               player2.health -= data_u.power * 0.1;
               let ht2 = p2.querySelector("#htp2");
@@ -174,7 +166,6 @@ const pokeball_formation = async (num) => {
               let hp2 = p2.querySelector("#health2");
               hp2.innerHTML = "Health = " + player2.health;
             } else {
-              // player1.health = 0;
               alert(
                 "Player 1 wins. Wait for 3 sec for the pokemon to be removed and then select your new pokemon"
               );
@@ -208,8 +199,6 @@ const pokeball_formation = async (num) => {
             u = data.moves[1].move.url;
             response_u = await fetch(u);
             data_u = await response_u.json();
-          // i--;
-          // player1.attack2 = data.moves[i].move.name;
           if (b1 == b2) {
             b1++;
             if (player2.health >= data_u.power * 0.1) {
@@ -221,13 +210,11 @@ const pokeball_formation = async (num) => {
                 " on player 2 which caused a damage of " +
                 data_u.power * 0.1 +
                 "\n";
-              // text.style.color = "blue";
               textarea.appendChild(text);
               textarea.scrollTop = textarea.scrollHeight;
 
               let audio = document.createElement("audio");
               audio.src = "/audiofile/punch.mp3";
-              // body.appendChild(audio);
               audio.play();
               player2.health -= data_u.power * 0.1;
               let ht2 = p2.querySelector("#htp2");
@@ -249,7 +236,6 @@ const pokeball_formation = async (num) => {
               }
               player2.health = 0;
               counter2--;
-              // alert(counter1);
               setTimeout(() => {
                 while (p2.firstChild) {
                   p2.removeChild(p2.firstChild);
@@ -284,8 +270,6 @@ const pokeball_formation_function = async () => {
 const pokeball_formation_2 = async (num) => {
   let pokeball_div = document.createElement("div");
   pokeball_div.id = num;
-  // pokeball_div.style.margin = 0;
-  // pokeball_div.style.padding = 0;a
   let img = document.createElement("img");
   let name = document.createElement("p");
   name.classList.add("name");
@@ -297,9 +281,7 @@ const pokeball_formation_2 = async (num) => {
   let response = await fetch(url + num + "/");
   let data = await response.json();
   name.innerHTML = data.forms[0].name;
-  //   name.innerHTML = data.forms[0].name;
   img.src = data.sprites.front_default;
-  // pokeball_div.click();
   let i = 0;
   pokeball_div.addEventListener("click", () => {
     if (counter2 == 0) {
@@ -307,15 +289,12 @@ const pokeball_formation_2 = async (num) => {
         total_balls_player2--;
         let audio = document.createElement("audio");
         audio.src = "/audiofile/pokeball_out.mp3";
-        // body.appendChild(audio);
         audio.play();
         counter2++;
         img.src = data.sprites.other.showdown.front_shiny;
         img.style.marginBottom = "1.875rem";
         pokeball_div.remove();
         img.style.visibility = "visible";
-        // img.style.marginLeft = "35rem";
-        // img.style.marginTop = "10rem";
         
         p2.appendChild(img);
         player2 = new player(
@@ -362,7 +341,6 @@ const pokeball_formation_2 = async (num) => {
             u = data.moves[0].move.url;
             response_u = await fetch(u);
             data_u = await response_u.json();
-          // player2.attack1 = data.moves[i].move.name;
           if (b2 < b1) {
             b2++;
             if (player1.health >= data_u.power * 0.1) {
@@ -374,12 +352,10 @@ const pokeball_formation_2 = async (num) => {
                 " on player 1 which caused a damage of " +
                 data_u.power * 0.1 +
                 "\n";
-              // text.style.color = "red";
               textarea.appendChild(text);
               textarea.scrollTop = textarea.scrollHeight;
               let audio = document.createElement("audio");
               audio.src = "/audiofile/punch.mp3";
-              // body.appendChild(audio);
               audio.play();
               player1.health -= data_u.power * 0.1;
               let ht1 = p1.querySelector("#htp1");
@@ -388,11 +364,8 @@ const pokeball_formation_2 = async (num) => {
               let hp1 = p1.querySelector("#health1");
               hp1.innerHTML = "Health = " + player1.health;
             } else {
-              
-              // alert("in");
               player1.health = 0;
               counter1--;
-              // alert(counter1);
               alert("Player 2 wins. Wait for 3 sec for the pokemon to be removed and then select your new pokemon");
               if (total_balls_player1 == 0 || total_balls_player2 == 0) {
                 alert(
@@ -414,7 +387,6 @@ const pokeball_formation_2 = async (num) => {
           let ht1 = p1.querySelector("#htp1");
           ht1.style.width =
             (player1.health / player1.const_health) * 10 + "rem";
-          // text1 = "Health" + player1.health;
         });
         buttonlight.addEventListener("click", async () => {
           let u;
@@ -423,14 +395,11 @@ const pokeball_formation_2 = async (num) => {
             u = data.moves[1].move.url;
             response_u = await fetch(u);
             data_u = await response_u.json();
-          // player2.attack2 = data.moves[i].move.name;
           if (b2 < b1) {
             b2++;
             if (player1.health >= data_u.power * 0.1) {
               let text = document.createElement("p");
               text.classList.add("text");
-              // p.id = "heyyyy"
-              // text.style.color = "red";
               text.innerHTML =
                 "Player 2 did " +player2.attack2
                  +
@@ -442,7 +411,6 @@ const pokeball_formation_2 = async (num) => {
 
               let audio = document.createElement("audio");
               audio.src = "/audiofile/punch.mp3";
-              // body.appendChild(audio);
               audio.play();
               player1.health -= data_u.power * 0.1;
               let ht1 = p1.querySelector("#htp1");
@@ -454,7 +422,6 @@ const pokeball_formation_2 = async (num) => {
               
               player1.health = 0;
               counter1--;
-              // alert(counter1);
               alert(
                 "Player 2 wins. Wait for 3 sec for the pokemon to be removed and then select your new pokemon"
               );
@@ -475,7 +442,6 @@ const pokeball_formation_2 = async (num) => {
           let ht1 = p1.querySelector("#htp1");
           ht1.style.width =
             (player1.health / player1.const_health) * 10 + "rem";
-          //   text1 = "Health" + player1.health;
           ht1.style.width =
             (player1.health / player1.const_health) * 10 + "rem";
           let hp1 = p1.querySelector("#health1");
@@ -495,7 +461,6 @@ const pokeball_formation_2 = async (num) => {
 const pokeball_insertion = async () => {
   for (let i = 0; i < choosen_pokemons_id_2.length; i++) {
     await pokeball_formation_2(choosen_pokemons_id_2[i]);
-    // pokeball_formation.id = i;
   }
 };
 

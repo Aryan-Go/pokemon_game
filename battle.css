@@ -2,7 +2,6 @@ body{
       background-image: url("/pokeballfile/battle_ground.png");
       background-size: 100vw 100vh;
       background-repeat: no-repeat;
-      /* overflow: auto; */
       overflow-x: hidden;
       overflow-y: hidden;
 }
@@ -13,10 +12,7 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* align-items: center; */
   font-family: 'Pixelify Sans' , sans-serif;
-  /* display:none; */
-  /* overflow-x: hidden; */
 }
 audio {
   display: none;
@@ -31,7 +27,6 @@ audio {
   overflow: auto;
   padding-top: 1rem;
   top: 1vh;
-  /* right: 19rem; */
   height: 10%;
   width: 60%;
   position: absolute;
@@ -50,8 +45,6 @@ div {
   justify-content: space-around;
   row-gap: 2vh;
   height: 90vh;
-  /* gap: 0; */
-  /* height: 0%; */
 }
 .main_ground {
   margin-top: 10vh;
@@ -70,8 +63,6 @@ div {
   justify-content: space-around;
   row-gap: 2vh;
   height: 90vh;
-  /* gap: 0; */
-  /* height: 0%; */
 }
 
 .p1 {
@@ -81,7 +72,6 @@ div {
   padding: 0;
   height: 70vh;
   margin-top : 12rem;
-  /* padding-top: -200rem; */
 }
 .p1 img{
   height: 10vh;
@@ -147,7 +137,6 @@ div {
 }
 
 .loading_gif{
-    /* display:block; */
     padding-top: 5rem;
     padding-left: 30rem;
     padding-right: 30rem;
@@ -156,15 +145,11 @@ div {
     right: 0;
     left: 0;
     bottom: 0;
-  /* width: 110%; */
-  /* height:3000%; */
   background-color: yellow;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* margin-top: 10%; */
-    /* width: 100%; */
 }
 .loading_bar{
     margin-top: 5rem;
@@ -230,14 +215,12 @@ height : 2.5rem;
 .name{
 font-weight : bolder;
 font-size : 2vh;
-/* scale : 2; */
 color : red;
 }
 
 .img{
 visibility : hidden;
 scale :3;
-/* margin : auto; */
 }
 
 .text{

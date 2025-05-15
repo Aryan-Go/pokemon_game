@@ -62,7 +62,6 @@ audio {
   justify-content: center;
   align-items: center;
   margin: 0.5rem;
-  /* border-radius: 45%; */
 }
 #main2 div {
   background-image: url("/pokeballfile/closed_pokeball.png");
@@ -88,7 +87,6 @@ audio {
   flex-direction: row;
   display: flex;
   flex-wrap: wrap;
-  /* margin-right:0.2rem; */
 }
 .playertext{
   width: 100%;
@@ -111,7 +109,6 @@ audio {
 }
 
 .infopage{
-  /* visibility: visible; */
   margin-top: 4rem;
   left: 8rem;
   position: absolute;
@@ -150,7 +147,6 @@ li{
 
 
 .loading_gif{
-    /* display:block; */
     padding-top: 5rem;
     padding-left: 30rem;
     padding-right: 30rem;
@@ -159,15 +155,11 @@ li{
     right: 0;
     left: 0;
     bottom: 0;
-  /* width: 110%; */
-  /* height:3000%; */
   background-color: yellow;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* margin-top: 10%; */
-    /* width: 100%; */
 }
 .loading_bar{
      margin-top: 5rem; 

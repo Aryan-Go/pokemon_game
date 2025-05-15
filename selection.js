@@ -139,7 +139,7 @@ const pokeball_checking_formation = async () => {
     console.log(u);
     let response_u = await fetch(u);
     let data_u = await response_u.json();
-    if (data.forms[0].name && data_u.power!=0) {
+    if (data.forms[0].name && data_u.power > 0) {
       pokemon_reached++;
       pokeball_formation_function(num);
     }
@@ -222,7 +222,7 @@ const pokeball_checking_formation_2 = async () => {
     console.log(u);
     let response_u = await fetch(u);
     let data_u = await response_u.json();
-    if (data.forms[0].name && data_u.power != 0) {
+    if (data.forms[0].name && data_u.power > 0) {
       pokemon_reached++;
       pokeball_formation_function2(num);
     }

@@ -200,7 +200,9 @@ const pokeball_formation = async (num) => {
               hp2.innerHTML = "Health = " + player2.health;
             } else {
               // player1.health = 0;
-              alert("Player 1 wins");
+              alert(
+                "Player 1 wins. Wait for 3 sec for the pokemon to be removed and then select your new pokemon"
+              );
               player2.health = 0;
               counter2--;
               // alert(counter1);
@@ -248,11 +250,14 @@ const pokeball_formation = async (num) => {
               audio.play();
               player2.health -= data_u.power * 0.1;
               let ht2 = p2.querySelector("#htp2");
-              ht2 = player2.health + "%";
+              ht2.style.width =
+                (player2.health / player2.const_health) * 10 + "rem";
               let hp2 = p2.querySelector("#health2");
               hp2.innerHTML = "Health = " + player2.health;
             } else {
-              alert("Player 1 wins");
+              alert(
+                "Player 1 wins. Wait for 3 sec for the pokemon to be removed and then select your new pokemon"
+              );
               player2.health = 0;
               counter2--;
               // alert(counter1);
@@ -434,7 +439,7 @@ const pokeball_formation_2 = async (num) => {
               player1.health = 0;
               counter1--;
               // alert(counter1);
-              alert("Player 2 wins");
+              alert("Player 2 wins. Wait for 3 sec for the pokemon to be removed and then select your new pokemon");
               setTimeout(() => {
                 while (p1.firstChild) {
                   p1.removeChild(p1.firstChild);
@@ -486,7 +491,9 @@ const pokeball_formation_2 = async (num) => {
               player1.health = 0;
               counter1--;
               // alert(counter1);
-              alert("Player 2 wins");
+              alert(
+                "Player 2 wins. Wait for 3 sec for the pokemon to be removed and then select your new pokemon"
+              );
               setTimeout(() => {
                 while (p1.firstChild) {
                   p1.removeChild(p1.firstChild);
@@ -497,6 +504,8 @@ const pokeball_formation_2 = async (num) => {
           }
           let ht1 = p1.querySelector("#htp1");
           //   text1 = "Health" + player1.health;
+          ht1.style.width =
+            (player1.health / player1.const_health) * 10 + "rem";
           let hp1 = p1.querySelector("#health1");
           hp1.innerHTML = "Health = " + player1.health;
         });

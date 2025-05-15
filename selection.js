@@ -54,7 +54,6 @@ const pokeball_formation_function = async (num) => {
   pokeball_div.appendChild(img);
   pokeball_div.appendChild(name);
   main_div_1.appendChild(pokeball_div);
-  console.log(url + num + "/");
   let response = await fetch(url + num + "/");
   let data = await response.json();
   name.innerHTML = data.forms[0].name;
@@ -69,11 +68,9 @@ const pokeball_formation_function = async (num) => {
         document.querySelector("audio").play();
         pokeball_div.style.backgroundImage = "url('open_pokeball.png')";
         img.style.visibility = "visible";
-        // console.log(num);
         choosen_pokemons_id.push(num);
         counter++;
       }
-      // console.log("if");
       if (counter == 6 && counter_2 == 6) {
         alert("now you can click battle");
         localStorage.setItem(
@@ -102,7 +99,6 @@ const pokeball_formation_function = async (num) => {
       pokeball_div.style.backgroundImage =
         "url('/pokeballfile/closed_pokeball.png')";
       img.style.visibility = "hidden";
-      console.log("else fi");
     }
   });
 };
@@ -136,7 +132,6 @@ const pokeball_checking_formation = async () => {
     let response = await fetch(url + num + "/");
     let data = await response.json();
     let u = data.moves[0].move.url;
-    console.log(u);
     let response_u = await fetch(u);
     let data_u = await response_u.json();
     if (data.forms[0].name && data_u.power > 0) {
@@ -158,7 +153,6 @@ const pokeball_formation_function2 = async (num) => {
   pokeball_div.appendChild(img);
   pokeball_div.appendChild(name);
   main_div_2.appendChild(pokeball_div);
-  console.log(url + num + "/");
   let response = await fetch(url + num + "/");
   let data = await response.json();
   name.innerHTML = data.forms[0].name;
@@ -174,11 +168,8 @@ const pokeball_formation_function2 = async (num) => {
         audio.play();
         pokeball_div.style.backgroundImage = "url('open_pokeball.png')";
         img.style.visibility = "visible";
-        // console.log(num);
         choosen_pokemons_id_2.push(num);
         counter_2++;
-        // alert(counter_2);
-        // console.log("if");
       }
       if (counter_2 == 6 && counter == 6) {
         alert("now you can click battle");
@@ -208,7 +199,6 @@ const pokeball_formation_function2 = async (num) => {
       pokeball_div.style.backgroundImage =
         "url('/pokeballfile/closed_pokeball.png')";
       img.style.visibility = "hidden";
-      console.log("else fi");
     }
   });
 };
@@ -219,7 +209,6 @@ const pokeball_checking_formation_2 = async () => {
     let response = await fetch(url + num + "/");
     let data = await response.json();
     let u = data.moves[0].move.url;
-    console.log(u);
     let response_u = await fetch(u);
     let data_u = await response_u.json();
     if (data.forms[0].name && data_u.power > 0) {

@@ -2,6 +2,8 @@ let healthtext2 = document.createElement("div");
 let attackdiv2 = document.createElement("div");
 let buttonheavy2 = document.createElement("div");
 let buttonlight2 = document.createElement("div");
+let total_balls_player1 = 6;
+let total_balls_player2 = 6;
 
 const starting_function = async () => {
   const load = document.querySelector(".loading_gif");
@@ -83,7 +85,6 @@ const pokeball_formation = async (num) => {
   pokeball_div.appendChild(img);
   pokeball_div.appendChild(name);
   player1_div.appendChild(pokeball_div);
-  console.log(url + num + "/");
   let response = await fetch(url + num + "/");
   let data = await response.json();
   name.innerHTML = data.forms[0].name;
@@ -91,6 +92,7 @@ const pokeball_formation = async (num) => {
   pokeball_div.addEventListener("click", () => {
     if (counter1 == 0) {
       if (img.style.visibility === "hidden") {
+        total_balls_player1--;
         let audio = document.createElement("audio");
         audio.src = "/audiofile/pokeball_out.mp3";
         audio.play();
@@ -169,7 +171,6 @@ const pokeball_formation = async (num) => {
           let response_u;
           let data_u;
             u = data.moves[0].move.url;
-            console.log(u);
             response_u = await fetch(u);
             data_u = await response_u.json();
           // i--;
@@ -213,7 +214,6 @@ const pokeball_formation = async (num) => {
               }, 3000);
             }
           }
-          console.log(data_u);
           let ht2 = p2.querySelector("#htp2");
           ht2.style.width = (player2.health / player2.const_health) * 10 + "rem";
           let hp1 = p1.querySelector("#health1");
@@ -224,7 +224,6 @@ const pokeball_formation = async (num) => {
           let response_u;
           let data_u;
             u = data.moves[1].move.url;
-            console.log(u);
             response_u = await fetch(u);
             data_u = await response_u.json();
           // i--;
@@ -268,8 +267,6 @@ const pokeball_formation = async (num) => {
               }, 3000);
             }
           }
-          // text2 = "Health" + player2.health;
-          console.log(data_u);
           let ht2 = p2.querySelector("#htp2");
           let hp2 = p2.querySelector("#health2");
           hp2.innerHTML = "Health = " + player2.health;
@@ -281,7 +278,6 @@ const pokeball_formation = async (num) => {
       } else {
         pokeball_div.style.backgroundImage = "url('closed_pokeball.png')";
         img.style.visibility = "hidden";
-        //   console.log("else fi");
       }
     }
   });
@@ -292,6 +288,8 @@ const pokeball_formation_function = async () => {
     await pokeball_formation(choosen_pokemons_id[i]);
   }
 }
+
+
 
 const pokeball_formation_2 = async (num) => {
   let pokeball_div = document.createElement("div");
@@ -316,7 +314,6 @@ const pokeball_formation_2 = async (num) => {
   pokeball_div.appendChild(img);
   pokeball_div.appendChild(name);
   player2_div.appendChild(pokeball_div);
-  console.log(url + num + "/");
   let response = await fetch(url + num + "/");
   let data = await response.json();
   name.innerHTML = data.forms[0].name;
@@ -327,6 +324,7 @@ const pokeball_formation_2 = async (num) => {
   pokeball_div.addEventListener("click", () => {
     if (counter2 == 0) {
       if (img.style.visibility === "hidden") {
+        total_balls_player2--;
         let audio = document.createElement("audio");
         audio.src = "/audiofile/pokeball_out.mp3";
         // body.appendChild(audio);
@@ -406,7 +404,6 @@ const pokeball_formation_2 = async (num) => {
           let response_u;
           let data_u;
             u = data.moves[0].move.url;
-            console.log(u);
             response_u = await fetch(u);
             data_u = await response_u.json();
           // player2.attack1 = data.moves[i].move.name;
@@ -457,7 +454,6 @@ const pokeball_formation_2 = async (num) => {
           let response_u;
           let data_u;
             u = data.moves[1].move.url;
-            console.log(u);
             response_u = await fetch(u);
             data_u = await response_u.json();
           // player2.attack2 = data.moves[i].move.name;
@@ -485,7 +481,7 @@ const pokeball_formation_2 = async (num) => {
               let ht1 = p1.querySelector("#htp1");
               ht1.style.width =
                 (player1.health / player1.const_health) * 10 + "rem";
-              let hp1 = p1.querySelector("health1");
+              let hp1 = p1.querySelector("#health1");
               hp1.innerHTML = "Health = " + player1.health;
             } else {
               player1.health = 0;
@@ -503,6 +499,8 @@ const pokeball_formation_2 = async (num) => {
             }
           }
           let ht1 = p1.querySelector("#htp1");
+          ht1.style.width =
+            (player1.health / player1.const_health) * 10 + "rem";
           //   text1 = "Health" + player1.health;
           ht1.style.width =
             (player1.health / player1.const_health) * 10 + "rem";
@@ -526,6 +524,8 @@ const pokeball_insertion = async () => {
     // pokeball_formation.id = i;
   }
 };
-
+if (total_balls_player1 == 0 || total_balls_player2 == 0) {
+  window.location.href = "index.html";
+}
 
 starting_function().then();

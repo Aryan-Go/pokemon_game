@@ -54,7 +54,7 @@ div {
   /* height: 0%; */
 }
 .main_ground {
-  margin-top: 10rem;
+  margin-top: 10vh;
   display: flex;
   flex-direction: row;
   text-align: center;

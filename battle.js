@@ -141,8 +141,8 @@ const pokeball_formation = async (num) => {
 
         healthtext.style.fontSize = "1.875rem";
         buttonheavy.style.backgroundColor = "#d35f56";
-        buttonheavy.innerHTML = player1.attack2;
-        buttonlight.innerHTML = player1.attack1;
+        buttonheavy.innerHTML = player1.attack1;
+        buttonlight.innerHTML = player1.attack2;
         buttonheavy.style.marginRight = "0.625rem";
         attackdiv.style.width = "20rem";
         attackdiv.style.height = "15rem";
@@ -177,7 +177,7 @@ const pokeball_formation = async (num) => {
             i++;
           } while (!data_u.power);
           // i--;
-          player1.attack1 = data.moves[i].move.name;
+          // player1.attack1 = data.moves[i].move.name;
           if (b1 == b2) {
             b1++;
             if (player2.health >= data_u.power * 0.1) {
@@ -233,7 +233,7 @@ const pokeball_formation = async (num) => {
             i++;
           } while (!data_u.power);
           // i--;
-          player1.attack2 = data.moves[i].move.name;
+          // player1.attack2 = data.moves[i].move.name;
           if (b1 == b2) {
             b1++;
             if (player2.health >= data_u.power * 0.1) {
@@ -380,8 +380,8 @@ const pokeball_formation_2 = async (num) => {
         // healthtext.style.marginTop = "-100%";
         healthtext.style.fontSize = "1.875rem";
         buttonheavy.style.backgroundColor = "#d35f56";
-        buttonheavy.innerHTML = player2.attack2;
-        buttonlight.innerHTML = player2.attack1;
+        buttonheavy.innerHTML = player2.attack1;
+        buttonlight.innerHTML = player2.attack2;
         buttonheavy.style.marginRight = "0.625rem";
         buttonheavy.style.border = "white 0.2rem solid";
         buttonheavy.style.borderRadius = "1rem";
@@ -415,7 +415,7 @@ const pokeball_formation_2 = async (num) => {
             data_u = await response_u.json();
             i++;
           } while (!data_u.power);
-          player2.attack1 = data.moves[i].move.name;
+          // player2.attack1 = data.moves[i].move.name;
           if (b2 < b1) {
             b2++;
             if (player1.health >= data_u.power * 0.1) {
@@ -470,7 +470,7 @@ const pokeball_formation_2 = async (num) => {
             data_u = await response_u.json();
             i++;
           } while (!data_u.power);
-          player2.attack2 = data.moves[i].move.name;
+          // player2.attack2 = data.moves[i].move.name;
           if (b2 < b1) {
             b2++;
             if (player1.health >= data_u.power * 0.1) {
